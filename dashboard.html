@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheesoria — Store Dashboard</title>
+  <meta name="description" content="Cheesoria Cheese Store Dashboard. Manage products, orders, customers, and store settings.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-body-tag">
+
+  <!-- Main Dashboard Layout -->
+  <div class="dashboard-layout">
+
+    <!-- ==========================================================================
+         1. SIDEBAR NAVIGATION
+         ========================================================================== -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar">
+      
+      <!-- Top Logo & Name (Center Aligned Logo Subtitle) -->
+      <div class="sidebar-brand-wrap">
+        <a href="home1.html" class="sidebar-brand-link" title="Return to Cheesoria Home">
+          <span class="brand-emoji">🧀</span>
+          <div class="brand-text-block">
+            <span class="brand-title">Cheesoria</span>
+            <span class="brand-sub">Cheese Store</span>
+          </div>
+        </a>
+        <button id="sidebar-close-btn" class="sidebar-close-btn" aria-label="Close Sidebar">&times;</button>
+      </div>
+
+      <!-- Navigation Links with Right-Aligned Badges -->
+      <nav class="sidebar-nav">
+        
+        <div class="nav-group-label">Menu</div>
+        
+        <a href="#overview" class="nav-item active" data-section="overview">
+          <span class="nav-icon">📊</span>
+          <span class="nav-text">Dashboard</span>
+        </a>
+
+        <a href="#inventory" class="nav-item" data-section="inventory">
+          <span class="nav-icon">🧀</span>
+          <span class="nav-text">Products &amp; Stock</span>
+          <span class="nav-badge">142</span>
+        </a>
+
+        <a href="#orders" class="nav-item" data-section="orders">
+          <span class="nav-icon">📦</span>
+          <span class="nav-text">Orders &amp; Deliveries</span>
+          <span class="nav-badge gold">8 New</span>
+        </a>
+
+        <a href="#customers" class="nav-item" data-section="customers">
+          <span class="nav-icon">👥</span>
+          <span class="nav-text">Customers</span>
+          <span class="nav-badge">1.2K</span>
+        </a>
+
+        <a href="#settings" class="nav-item" data-section="settings">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-text">Store Settings</span>
+        </a>
+
+      </nav>
+
+      <!-- Sidebar Footer (Profile & Logout) -->
+      <div class="sidebar-footer">
+        <div class="sidebar-user-preview">
+          <div class="user-avatar-wrap">
+            <img src="assets/cheesemaker.png" alt="Admin Avatar">
+            <span class="online-indicator"></span>
+          </div>
+          <div class="user-meta">
+            <strong class="user-name">Manager Jean-Luc</strong>
+            <span class="user-role">Store Admin</span>
+          </div>
+        </div>
+        
+        <button id="sidebar-logout-btn" class="logout-btn">
+          <span class="logout-icon">🚪</span>
+          <span>Logout</span>
+        </button>
+      </div>
+
+    </aside>
+
+    <!-- Sidebar Overlay Backdrop for Mobile -->
+    <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
+    <!-- ==========================================================================
+         2. MAIN CONTENT AREA
+         ========================================================================== -->
+    <div class="dashboard-main">
+
+      <!-- Topbar Header -->
+      <header class="dashboard-topbar">
+        
+        <!-- Left: Mobile Menu & Dynamic Breadcrumb -->
+        <div class="topbar-left">
+          <button id="hamburger-menu-btn" class="hamburger-btn" aria-label="Toggle Sidebar Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          
+          <div class="topbar-breadcrumb">
+            <span class="bc-root">Admin</span>
+            <span class="bc-sep">/</span>
+            <span class="bc-current" id="current-section-title">Dashboard Overview</span>
+          </div>
+        </div>
+
+        <!-- Right: Control Actions (Theme Toggle, RTL Toggle, Notifications, Profile Icon) -->
+        <div class="topbar-right">
+          
+          <!-- Theme Toggle Button -->
+          <button id="dash-theme-toggle" class="topbar-icon-btn" title="Toggle Light / Dark Theme">
+            <span class="theme-icon-sun">☀️</span>
+            <span class="theme-icon-moon">🌙</span>
+          </button>
+
+          <!-- RTL Direction Toggle Button -->
+          <button id="dash-rtl-toggle" class="topbar-pill-btn" title="Toggle Layout Direction (LTR/RTL)">
+            <span class="rtl-text">LTR / RTL</span>
+          </button>
+
+          <!-- Notifications Bell & Dropdown -->
+          <div class="topbar-dropdown-wrap">
+            <button id="notif-bell-btn" class="topbar-icon-btn notif-btn" title="Notifications">
+              <span class="bell-icon">🔔</span>
+              <span class="notif-badge">3</span>
+            </button>
+            
+            <!-- Notifications Dropdown Card -->
+            <div id="notif-dropdown" class="topbar-dropdown-card glass-card hidden">
+              <div class="dropdown-header">
+                <strong>Notifications</strong>
+                <span class="mark-read-link" id="mark-all-read">Clear all</span>
+              </div>
+              <div class="dropdown-body">
+                <div class="notif-item unread">
+                  <span class="notif-icon">📦</span>
+                  <div>
+                    <strong class="notif-title">New Order Received</strong>
+                    <p>Order #CHS-1042 for Aged Gouda Platter.</p>
+                    <span class="notif-time">10 mins ago</span>
+                  </div>
+                </div>
+                <div class="notif-item unread">
+                  <span class="notif-icon">🧀</span>
+                  <div>
+                    <strong class="notif-title">Low Stock Warning</strong>
+                    <p>Truffle Layered Brie is down to 5 wheels.</p>
+                    <span class="notif-time">30 mins ago</span>
+                  </div>
+                </div>
+                <div class="notif-item unread">
+                  <span class="notif-icon">⭐</span>
+                  <div>
+                    <strong class="notif-title">5-Star Customer Review</strong>
+                    <p>Sarah left a review on Artisanal Cheese Box.</p>
+                    <span class="notif-time">2 hours ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Top-Right Profile Icon & Dropdown Menu -->
+          <div class="topbar-dropdown-wrap profile-dropdown-wrap">
+            <button id="profile-menu-btn" class="topbar-profile-btn" title="Profile Options">
+              <img src="assets/cheesemaker.png" alt="Admin Avatar" class="profile-avatar">
+              <span class="profile-chevron">▾</span>
+            </button>
+
+            <!-- Profile Dropdown Card -->
+            <div id="profile-dropdown" class="topbar-dropdown-card profile-card glass-card hidden">
+              <div class="profile-dropdown-header">
+                <strong>Jean-Luc Vance</strong>
+                <p>info@cheesoriacheese.com</p>
+                <span class="role-pill">Store Manager</span>
+              </div>
+              <div class="profile-dropdown-menu">
+                <a href="#settings" class="profile-menu-item nav-trigger" data-target="settings">
+                  <span>⚙️ Account Settings</span>
+                </a>
+                <a href="home1.html" class="profile-menu-item">
+                  <span>🏠 Return to Storefront</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <button id="header-logout-btn" class="profile-menu-item logout-item">
+                  <span>🚪 Logout</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </header>
+
+      <!-- Dashboard Main Viewport Container -->
+      <main class="dashboard-body">
+        
+        <!-- ===================================================================
+             DYNAMIC VIEW SECTION 1: OVERVIEW DASHBOARD
+             =================================================================== -->
+        <div id="section-overview" class="dash-view-section active">
+          
+          <!-- WELCOME BANNER WITH PREMIUM "VIEW STOREFRONT" BUTTON -->
+          <section class="dash-welcome-card glass-card">
+            <div class="welcome-text-wrap">
+              <span class="welcome-badge">— Cheesoria Admin Portal —</span>
+              <h1 class="welcome-title">Welcome Back, Manager Jean-Luc! 🧀</h1>
+              <p class="welcome-subtitle">
+                Here is your daily summary for Cheesoria Cheese Store. Your products, active orders, and customer activity are updated in real time.
+              </p>
+              <div class="welcome-live-pills">
+                <div class="live-pill">
+                  <span class="pill-dot green"></span>
+                  <span>Store Status: <strong>Open &amp; Operating</strong></span>
+                </div>
+                <div class="live-pill">
+                  <span class="pill-dot gold"></span>
+                  <span>Today's Orders: <strong>24 Shipments</strong></span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Premium Redesigned "View Storefront" CTA Button -->
+            <div class="welcome-action-wrap">
+              <a href="home1.html" class="view-storefront-btn">
+                <span class="btn-icon">✨</span>
+                <span>View Storefront</span>
+                <span class="btn-arrow">↗</span>
+              </a>
+            </div>
+          </section>
+
+          <!-- METRICS & DATA CARDS GRID -->
+          <section class="dash-panel-section">
+            <div class="panel-header">
+              <div>
+                <h2 class="panel-title">Store Performance &amp; Key Metrics</h2>
+              </div>
+              <br>
+              <br>
+            </div>
+            <div class="dash-metrics-grid">
+              <div class="metric-card glass-card">
+                <div class="metric-header">
+                  <span class="metric-icon gold">💰</span>
+                  <span class="metric-trend positive">+18.4%</span>
+                </div>
+                <div class="metric-body">
+                  <span class="metric-label">Total Sales Revenue</span>
+                  <h3 class="metric-value">$42,850</h3>
+                  <p class="metric-sub">This month's earnings</p>
+                </div>
+              </div>
+
+              <div class="metric-card glass-card">
+                <div class="metric-header">
+                  <span class="metric-icon gold">🧀</span>
+                  <span class="metric-trend positive">142 In Stock</span>
+                </div>
+                <div class="metric-body">
+                  <span class="metric-label">Cheese Products</span>
+                  <h3 class="metric-value">36 Varieties</h3>
+                  <p class="metric-sub">Artisanal &amp; Aged Stock</p>
+                </div>
+              </div>
+
+              <div class="metric-card glass-card">
+                <div class="metric-header">
+                  <span class="metric-icon gold">📦</span>
+                  <span class="metric-trend positive">8 Pending</span>
+                </div>
+                <div class="metric-body">
+                  <span class="metric-label">Active Orders</span>
+                  <h3 class="metric-value">24 Today</h3>
+                  <p class="metric-sub">Express Delivery En Route</p>
+                </div>
+              </div>
+
+              <div class="metric-card glass-card">
+                <div class="metric-header">
+                  <span class="metric-icon gold">👥</span>
+                  <span class="metric-trend positive">+12 New</span>
+                </div>
+                <div class="metric-body">
+                  <span class="metric-label">Total Customers</span>
+                  <h3 class="metric-value">1,280 Patrons</h3>
+                  <p class="metric-sub">Registered Cheese Lovers</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- RECENT ORDERS PREVIEW -->
+          <section class="dash-panel-section recent-orders-section">
+            <div class="panel-header">
+              <div>
+                <h2 class="panel-title">Recent Orders</h2>
+              </div>
+              <br>
+              <br>
+            </div>
+
+            <div class="orders-list glass-card">
+              <div class="order-item">
+                <div class="order-icon-wrap">📦</div>
+                <div class="order-info">
+                  <strong>Order #CHS-1042 — Eleanor Vance</strong>
+                  <p>36M Gouda Wedge &amp; Vintage Cabernet Pairings • Beverly Hills, CA</p>
+                  <span class="order-date">Placed 15 mins ago • Priority Express</span>
+                </div>
+                <div class="order-status-wrap">
+                  <span class="order-amount">$113.00</span>
+                  <span class="status-pill in-transit">In Transit</span>
+                </div>
+              </div>
+
+              <div class="order-item">
+                <div class="order-icon-wrap">📦</div>
+                <div class="order-info">
+                  <strong>Order #CHS-1041 — Robert Miller</strong>
+                  <p>Truffle Layered Brie &amp; Artisan Cracker Box • Manhattan, NY</p>
+                  <span class="order-date">Placed 1 hour ago • Express Courier</span>
+                </div>
+                <div class="order-status-wrap">
+                  <span class="order-amount">$84.00</span>
+                  <span class="status-pill cured">Preparing</span>
+                </div>
+              </div>
+
+              <div class="order-item">
+                <div class="order-icon-wrap">📦</div>
+                <div class="order-info">
+                  <strong>Order #CHS-1040 — Sarah Jenkins</strong>
+                  <p>Whole Wheel Parmigiano Reggiano Reserve • Napa Valley, CA</p>
+                  <span class="order-date">Placed 2 hours ago • Local Hand Delivery</span>
+                </div>
+                <div class="order-status-wrap">
+                  <span class="order-amount">$210.00</span>
+                  <span class="status-pill delivered">Delivered</span>
+                </div>
+              </div>
+
+              <div class="order-item">
+                <div class="order-icon-wrap">📦</div>
+                <div class="order-info">
+                  <strong>Order #CHS-1039 — David Montgomery</strong>
+                  <p>Cabernet Wine Rubbed Wheel &amp; Slate Tasting Board • San Francisco, CA</p>
+                  <span class="order-date">Placed 4 hours ago • Express Air Crate</span>
+                </div>
+                <div class="order-status-wrap">
+                  <span class="order-amount">$175.00</span>
+                  <span class="status-pill in-transit">In Transit</span>
+                </div>
+              </div>
+
+              <div class="order-item">
+                <div class="order-icon-wrap">📦</div>
+                <div class="order-info">
+                  <strong>Order #CHS-1038 — Sophia Martinez</strong>
+                  <p>Smoked Alpine Emmental &amp; Wildflower Honey Sampler • Chicago, IL</p>
+                  <span class="order-date">Placed 5 hours ago • Standard Delivery</span>
+                </div>
+                <div class="order-status-wrap">
+                  <span class="order-amount">$96.50</span>
+                  <span class="status-pill delivered">Delivered</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- ===================================================================
+             DYNAMIC VIEW SECTION 2: PRODUCTS & STOCK
+             =================================================================== -->
+        <div id="section-inventory" class="dash-view-section">
+          <section class="dash-panel-section">
+            <div class="panel-header">
+              <div>
+                <h2 class="panel-title">Products &amp; Stock Levels</h2>
+                <p class="panel-subtitle">Manage inventory and artisanal cheese varieties.</p>
+              </div>
+              <button class="view-storefront-btn add-prod-btn">
+                <span>+ Add New Cheese Product</span>
+              </button>
+            </div>
+
+            <div class="table-card glass-card">
+              <div class="table-responsive">
+                <table class="dash-table">
+                  <thead>
+                    <tr>
+                      <th>Product Name</th>
+                      <th>Category</th>
+                      <th>Price</th>
+                      <th>In Stock</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Alpine Reserve Aged Gouda (36M)</strong></td>
+                      <td>Hard Aged Cheese</td>
+                      <td><span class="temp-text">$48.00 / wedge</span></td>
+                      <td>45 Units</td>
+                      <td><span class="status-pill optimal">In Stock</span></td>
+                      <td><button class="table-action-btn">Edit</button></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Truffle Layered Black Rind Brie</strong></td>
+                      <td>Soft Creamy Cheese</td>
+                      <td><span class="temp-text">$36.00 / wheel</span></td>
+                      <td>8 Units</td>
+                      <td><span class="status-pill ready">Low Stock</span></td>
+                      <td><button class="table-action-btn">Edit</button></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Copper Cauldron Parmigiano Reggiano</strong></td>
+                      <td>Italian Reserve</td>
+                      <td><span class="temp-text">$52.00 / kg</span></td>
+                      <td>60 Units</td>
+                      <td><span class="status-pill optimal">In Stock</span></td>
+                      <td><button class="table-action-btn">Edit</button></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Cabernet Wine Rubbed Vintage Wheel</strong></td>
+                      <td>Specialty Blend</td>
+                      <td><span class="temp-text">$65.00 / wheel</span></td>
+                      <td>22 Units</td>
+                      <td><span class="status-pill VIP">Special Edition</span></td>
+                      <td><button class="table-action-btn">Edit</button></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Smoked Alpine Emmental Reserve</strong></td>
+                      <td>Swiss Alpine</td>
+                      <td><span class="temp-text">$42.00 / wedge</span></td>
+                      <td>18 Units</td>
+                      <td><span class="status-pill optimal">In Stock</span></td>
+                      <td><button class="table-action-btn">Edit</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- ===================================================================
+             DYNAMIC VIEW SECTION 3: ORDERS & DELIVERIES
+             =================================================================== -->
+        <div id="section-orders" class="dash-view-section">
+          <section class="dash-panel-section">
+            <div class="panel-header">
+              <div>
+                <h2 class="panel-title">Orders &amp; Deliveries</h2>
+                <p class="panel-subtitle">Track active purchases and fulfillment.</p>
+              </div>
+            </div>
+
+            <div class="orders-list glass-card">
+              <div class="order-item">
+                <div class="order-icon-wrap">📦</div>
+                <div class="order-info">
+                  <strong>Order #CHS-1042 — Eleanor Vance</strong>
+                  <p>36M Gouda Wedge &amp; Vintage Cabernet Pairings • Beverly Hills, CA</p>
+                  <span class="order-date">Placed 15 mins ago • Priority Express Shipping</span>
+                </div>
+                <div class="order-status-wrap">
+                  <span class="order-amount">$113.00</span>
+                  <span class="status-pill in-transit">In Transit</span>
+                </div>
+              </div>
+
+              <div class="order-item">
+                <div class="order-icon-wrap">📦</div>
+                <div class="order-info">
+                  <strong>Order #CHS-1041 — Robert Miller</strong>
+                  <p>Truffle Layered Brie &amp; Artisan Cracker Box • Manhattan, NY</p>
+                  <span class="order-date">Placed 1 hour ago • Express Courier</span>
+                </div>
+                <div class="order-status-wrap">
+                  <span class="order-amount">$84.00</span>
+                  <span class="status-pill cured">Preparing</span>
+                </div>
+              </div>
+
+              <div class="order-item">
+                <div class="order-icon-wrap">📦</div>
+                <div class="order-info">
+                  <strong>Order #CHS-1040 — Sarah Jenkins</strong>
+                  <p>Whole Wheel Parmigiano Reserve • Napa Valley, CA</p>
+                  <span class="order-date">Delivered Today • Local Hand Delivery</span>
+                </div>
+                <div class="order-status-wrap">
+                  <span class="order-amount">$210.00</span>
+                  <span class="status-pill delivered">Delivered</span>
+                </div>
+              </div>
+
+              <div class="order-item">
+                <div class="order-icon-wrap">📦</div>
+                <div class="order-info">
+                  <strong>Order #CHS-1039 — David Montgomery</strong>
+                  <p>Cabernet Wine Rubbed Wheel &amp; Slate Board • San Francisco, CA</p>
+                  <span class="order-date">Delivered Yesterday • Express Air Crate</span>
+                </div>
+                <div class="order-status-wrap">
+                  <span class="order-amount">$175.00</span>
+                  <span class="status-pill delivered">Delivered</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- ===================================================================
+             DYNAMIC VIEW SECTION 4: CUSTOMERS DIRECTORY
+             =================================================================== -->
+        <div id="section-customers" class="dash-view-section">
+          <section class="dash-panel-section">
+            <div class="panel-header">
+              <div>
+                <h2 class="panel-title">Customers Directory</h2>
+                <p class="panel-subtitle">Registered patrons and VIP Cellar Society members.</p>
+              </div>
+            </div>
+
+            <div class="table-card glass-card">
+              <div class="table-responsive">
+                <table class="dash-table">
+                  <thead>
+                    <tr>
+                      <th>Customer Name</th>
+                      <th>Email Address</th>
+                      <th>Total Spent</th>
+                      <th>Total Orders</th>
+                      <th>Membership Tier</th>
+                      <th>Contact</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="table-vault-name">
+                          <span class="vault-icon">👑</span>
+                          <div>
+                            <strong>Eleanor Vance</strong>
+                            <span>Beverly Hills, CA</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>eleanor@vance-estates.com</td>
+                      <td><span class="temp-text">$3,420.00</span></td>
+                      <td>14 Orders</td>
+                      <td><span class="status-pill VIP">VIP Cellar Society</span></td>
+                      <td><a href="mailto:eleanor@vance-estates.com" class="table-link-btn">Email Patron</a></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="table-vault-name">
+                          <span class="vault-icon">👤</span>
+                          <div>
+                            <strong>Robert Miller</strong>
+                            <span>Manhattan, NY</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>rmiller@gourmetmail.com</td>
+                      <td><span class="temp-text">$1,280.00</span></td>
+                      <td>6 Orders</td>
+                      <td><span class="status-pill optimal">Gold Member</span></td>
+                      <td><a href="mailto:rmiller@gourmetmail.com" class="table-link-btn">Email Patron</a></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="table-vault-name">
+                          <span class="vault-icon">👑</span>
+                          <div>
+                            <strong>Sarah Jenkins</strong>
+                            <span>Napa Valley, CA</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>sarah@napacellar.org</td>
+                      <td><span class="temp-text">$5,890.00</span></td>
+                      <td>22 Orders</td>
+                      <td><span class="status-pill VIP">VIP Cellar Society</span></td>
+                      <td><a href="mailto:sarah@napacellar.org" class="table-link-btn">Email Patron</a></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="table-vault-name">
+                          <span class="vault-icon">👤</span>
+                          <div>
+                            <strong>David Montgomery</strong>
+                            <span>San Francisco, CA</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>david.m@techcap.io</td>
+                      <td><span class="temp-text">$950.00</span></td>
+                      <td>4 Orders</td>
+                      <td><span class="status-pill ready">Silver Member</span></td>
+                      <td><a href="mailto:david.m@techcap.io" class="table-link-btn">Email Patron</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- ===================================================================
+             DYNAMIC VIEW SECTION 5: STORE SETTINGS
+             =================================================================== -->
+        <div id="section-settings" class="dash-view-section">
+          <section class="dash-panel-section">
+            <div class="panel-header">
+              <div>
+                <h2 class="panel-title">Store Settings &amp; Preferences</h2>
+                <p class="panel-subtitle">Configure your Cheesoria store profile and notifications.</p>
+              </div>
+            </div>
+
+            <div class="settings-card glass-card">
+              <form id="settings-form" class="settings-form">
+                
+                <div class="form-group-row">
+                  <div class="form-field">
+                    <label class="form-label">Store Name</label>
+                    <input type="text" class="dash-input" value="Cheesoria Cheese Store" readonly>
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label">Support Email</label>
+                    <input type="email" class="dash-input" value="info@cheesoriacheese.com">
+                  </div>
+                </div>
+
+                <div class="form-group-row">
+                  <div class="form-field">
+                    <label class="form-label">Primary Currency</label>
+                    <select class="dash-select">
+                      <option value="USD">USD ($) — United States Dollar</option>
+                      <option value="EUR">EUR (€) — Euro</option>
+                      <option value="GBP">GBP (£) — British Pound</option>
+                    </select>
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label">Default Shipping Mode</label>
+                    <select class="dash-select">
+                      <option value="express">Insulated Cold-Chain Air Express</option>
+                      <option value="standard">Standard Temperature Controlled</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label">Notification Email Alerts</label>
+                  <div class="checkbox-group">
+                    <label class="checkbox-label">
+                      <input type="checkbox" checked>
+                      <span>Receive email alerts for new orders</span>
+                    </label>
+                    <label class="checkbox-label">
+                      <input type="checkbox" checked>
+                      <span>Receive low stock warnings (< 10 units)</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="settings-action-wrap">
+                  <button type="submit" class="view-storefront-btn">
+                    <span>Save Settings</span>
+                  </button>
+                </div>
+
+              </form>
+            </div>
+          </section>
+        </div>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <!-- Logout Toast Notification -->
+  <div id="logout-toast" class="dash-toast glass-card hidden" role="alert">
+    <span class="toast-icon">🚪</span>
+    <div>
+      <strong>Logging Out...</strong>
+      <p>Redirecting to Cheesoria storefront.</p>
+    </div>
+  </div>
+
+  <!-- JavaScript Script -->
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

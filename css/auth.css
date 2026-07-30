@@ -1,0 +1,651 @@
+/* ==========================================================================
+   CHEESORIA LUXURY AUTHENTICATION STYLESHEET (css/auth.css)
+   ========================================================================== */
+
+/* 1. STRICT NO-SCROLL BODY & CONTAINER */
+html, body {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.auth-body {
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-light-theme);
+  position: relative;
+  overflow: hidden !important;
+  padding: 0.4rem;
+  box-sizing: border-box;
+}
+
+/* Floating Ambient Luxury Glow Orbs (Background Ambiance) */
+.auth-ambient-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.28;
+  animation: floatOrb 18s ease-in-out infinite alternate;
+}
+
+.glow-orb-1 {
+  width: 450px;
+  height: 450px;
+  background: var(--primary);
+  top: -100px;
+  left: -100px;
+}
+
+.glow-orb-2 {
+  width: 500px;
+  height: 500px;
+  background: var(--secondary);
+  bottom: -150px;
+  right: -100px;
+  animation-delay: -9s;
+}
+
+.glow-orb-3 {
+  width: 300px;
+  height: 300px;
+  background: #E59E10;
+  top: 40%;
+  left: 60%;
+  animation-duration: 22s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, -30px) scale(1.1); }
+  100% { transform: translate(-30px, 40px) scale(0.95); }
+}
+
+/* 2. NO-SCROLL AUTH CARD LAYOUT */
+.auth-container {
+  width: 100%;
+  max-width: 410px;
+  position: relative;
+  z-index: 1;
+  margin: auto;
+}
+
+.auth-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 1rem 1.4rem 0.85rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 0 40px rgba(244, 178, 35, 0.06);
+  position: relative;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  transition: var(--transition-fast);
+  max-height: 97vh;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox: hide scrollbar */
+  -ms-overflow-style: none; /* IE/Edge */
+  box-sizing: border-box;
+}
+
+.auth-card::-webkit-scrollbar {
+  display: none; /* Chrome/Safari: hide scrollbar */
+  width: 0;
+  height: 0;
+}
+
+.auth-card:hover {
+  border-color: rgba(244, 178, 35, 0.35);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.16), 0 0 50px rgba(244, 178, 35, 0.1);
+}
+
+/* 3. TOP-RIGHT CONTROLS (RTL & DARK MODE TOGGLES) */
+.auth-top-controls {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  z-index: 10;
+}
+
+html[dir="rtl"] .auth-top-controls {
+  right: auto;
+  left: 0.85rem;
+}
+
+.auth-control-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  height: 26px;
+  padding: 0 0.55rem;
+  border-radius: 50px;
+  background: light-dark(rgba(255, 255, 255, 0.85), rgba(0, 0, 0, 0.35));
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  font-size: 0.7rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.auth-control-btn:hover {
+  background: light-dark(#FFFFFF, rgba(255, 255, 255, 0.12));
+  border-color: var(--primary);
+  color: var(--heading-color);
+  transform: translateY(-1px);
+}
+
+.theme-icon-sun { display: none; }
+.theme-icon-moon { display: inline-block; }
+
+html[data-theme="dark"] .theme-icon-sun { display: inline-block; }
+html[data-theme="dark"] .theme-icon-moon { display: none; }
+
+/* 4. HORIZONTAL LOGO (EMOJI LEFT OF LOGO NAME & SUBTITLE) */
+.auth-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0.45rem;
+  padding-top: 0.05rem;
+}
+
+.auth-logo-link {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  margin-bottom: 0.65rem;
+  transition: var(--transition-fast);
+}
+
+.auth-logo-link:hover {
+  transform: scale(1.04);
+}
+
+.logo-emoji {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 0;
+  display: block;
+}
+
+.logo-text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.05;
+}
+
+.logo-name {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-size: 1.45rem;
+  color: var(--primary);
+  text-align: center;
+  display: block;
+}
+
+.logo-subtitle {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--heading-color);
+  opacity: 0.85;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+/* 5. TAGLINE FONT STYLE & COLOR FOR WELCOME BACK / JOIN CHEESORIA */
+.auth-title {
+  font-family: 'Alex Brush', cursive;
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--primary);
+  margin-top: 0.15rem;
+  margin-bottom: 0.45rem;
+  line-height: 1.15;
+  text-align: center;
+}
+
+/* 6. SUBTEXT FONTSTYLE IN ALL MEDIA QUERIES */
+.auth-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.25;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0.9;
+}
+
+/* 7. VERTICALLY STACKED FORM FIELDS (COMPACT NO-SCROLL) */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.form-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.input-rel-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-field-icon {
+  position: absolute;
+  left: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--primary);
+  pointer-events: none;
+  z-index: 2;
+}
+
+html[dir="rtl"] .input-field-icon {
+  left: auto;
+  right: 0.75rem;
+}
+
+.auth-input {
+  width: 100%;
+  height: 35px;
+  padding: 0 2.2rem 0 2.2rem;
+  border-radius: 8px;
+  background: light-dark(rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.25));
+  border: 1.5px solid var(--border-color);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  transition: var(--transition-fast);
+}
+
+html[dir="rtl"] .auth-input {
+  padding: 0 2.2rem 0 2.2rem;
+}
+
+.auth-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: light-dark(#FFFFFF, rgba(0, 0, 0, 0.4));
+  box-shadow: 0 0 0 3px rgba(244, 178, 35, 0.18);
+}
+
+/* Password Eye Toggle Button */
+.eye-toggle-btn {
+  position: absolute;
+  right: 0.65rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0 0.2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: var(--transition-fast);
+  z-index: 3;
+}
+
+html[dir="rtl"] .eye-toggle-btn {
+  right: auto;
+  left: 0.65rem;
+}
+
+.eye-toggle-btn:hover {
+  color: var(--primary);
+}
+
+/* 8. REMEMBER ME & FORGOT PASSWORD (SAME ROW) */
+.form-options-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  margin-bottom: 0.45rem;
+  font-size: 0.73rem;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--text-main);
+  cursor: pointer;
+  user-select: none;
+}
+
+.custom-checkbox {
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+  border: 1.5px solid var(--border-color);
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.forgot-pass-link {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.forgot-pass-link:hover {
+  color: #D49B1D;
+  text-decoration: underline;
+}
+
+/* Terms Checkbox for Sign Up */
+.terms-label {
+  font-size: 0.72rem;
+  line-height: 1.25;
+  color: var(--text-muted);
+}
+
+.terms-link {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+}
+
+/* 9. FULL-WIDTH CTA BUTTON */
+.auth-submit-btn {
+  width: 100%;
+  height: 36px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary) 0%, #D49B1D 100%);
+  color: #1A1200;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  box-shadow: 0 4px 12px rgba(244, 178, 35, 0.28);
+  transition: var(--transition-fast);
+}
+
+.auth-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(244, 178, 35, 0.38);
+  color: #000000;
+}
+
+.auth-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* 10. SOCIAL LOGIN & DIVIDER */
+.social-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0.45rem 0 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.social-divider::before,
+.social-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.social-divider span {
+  padding: 0 0.45rem;
+}
+
+.social-buttons-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.social-btn {
+  width: 48px;
+  height: 36px;
+  flex: none;
+  border-radius: 9px;
+  background: light-dark(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.social-btn:hover {
+  background: light-dark(#FFFFFF, rgba(255, 255, 255, 0.15));
+  border-color: var(--primary);
+  color: var(--heading-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(244, 178, 35, 0.18);
+}
+
+.social-icon-svg {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+}
+
+/* 11. CARD FOOTER LINKS */
+.auth-footer {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.auth-switch-link {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 0.2rem;
+  transition: var(--transition-fast);
+}
+
+html[dir="rtl"] .auth-switch-link {
+  margin-left: 0;
+  margin-right: 0.2rem;
+}
+
+.auth-switch-link:hover {
+  color: #D49B1D;
+  text-decoration: underline;
+}
+
+/* Feedback Alert Message */
+.auth-alert {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.auth-alert.hidden { display: none; }
+
+.auth-alert.success {
+  background: rgba(76, 175, 80, 0.15);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  color: #4CAF50;
+}
+
+.auth-alert.error {
+  background: rgba(244, 67, 54, 0.15);
+  border: 1px solid rgba(244, 67, 54, 0.3);
+  color: #F44336;
+}
+
+/* 12. RESPONSIVE BREAKPOINTS (ALL NO-SCROLL MATCHED SUBTEXT & TAGLINES) */
+
+/* Mobile (< 640px) */
+@media (max-width: 639.98px) {
+  .auth-body {
+    padding: 0.3rem;
+  }
+  .auth-card {
+    padding: 0.85rem 1rem 0.75rem;
+    border-radius: 14px;
+  }
+  .auth-top-controls {
+    top: 0.6rem;
+    right: 0.65rem;
+  }
+  html[dir="rtl"] .auth-top-controls {
+    left: 0.65rem;
+  }
+  .auth-control-btn {
+    height: 24px;
+    padding: 0 0.45rem;
+    font-size: 0.68rem;
+  }
+  .logo-emoji {
+    font-size: 1.5rem;
+  }
+  .logo-name {
+    font-size: 1.25rem;
+  }
+  .auth-title {
+    font-size: 1.45rem;
+  }
+  .auth-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.73rem;
+  }
+  .form-options-row {
+    font-size: 0.7rem;
+  }
+  .auth-input {
+    height: 33px;
+    font-size: 0.8rem;
+  }
+  .auth-submit-btn {
+    height: 34px;
+    font-size: 0.82rem;
+  }
+  .social-buttons-grid {
+    flex-direction: row;
+    gap: 0.35rem;
+  }
+  .social-btn {
+    height: 30px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Tablet (640px - 1024px) */
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  .auth-container {
+    max-width: 410px;
+  }
+  .auth-title {
+    font-size: 1.55rem;
+  }
+  .auth-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.76rem;
+  }
+}
+
+/* Desktop (1024px - 1280px) */
+@media (min-width: 1024px) and (max-width: 1279.98px) {
+  .auth-container {
+    max-width: 415px;
+  }
+  .auth-title {
+    font-size: 1.6rem;
+  }
+  .auth-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.77rem;
+  }
+}
+
+/* Large Desktop (> 1280px) */
+@media (min-width: 1280px) {
+  .auth-container {
+    max-width: 420px;
+  }
+  .auth-title {
+    font-size: 1.65rem;
+  }
+  .auth-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+  }
+}

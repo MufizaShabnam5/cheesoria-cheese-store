@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bespoke Service Experience | Cheesoria Artisanal Cheese</title>
+  <meta name="description" content="Explore Cheesoria's luxury bespoke service details: master sommelier pairings, private tasting masterclasses, custom charcuterie grazing tables, and corporate catering.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Core Google Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/global.css?v=31">
+  <link rel="stylesheet" href="css/navbar.css?v=31">
+  <link rel="stylesheet" href="css/footer.css?v=31">
+  <link rel="stylesheet" href="css/index.css?v=31">
+  <link rel="stylesheet" href="css/services.css?v=31">
+  <link rel="stylesheet" href="css/service-details.css?v=31">
+</head>
+<body class="service-details-page-body">
+
+  <!-- Sticky Glassmorphic Navbar Component (Loaded dynamically via js/app.js) -->
+  <div id="navbar"></div>
+
+  <main class="service-details-main">
+
+    <!-- ==========================================================================
+         SECTION 1: HERO — Split Layout (Left: Breadcrumb, Headings & CTAs, Right: Media)
+         ========================================================================== -->
+    <section id="hero" class="srv-details-hero-section">
+      <div class="srv-details-hero-grid">
+
+        <!-- Left Side: Service Info & Call-To-Actions -->
+        <div class="srv-details-hero-left scroll-reveal">
+          
+          <!-- Breadcrumb Navigation -->
+          <nav class="srv-details-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html" class="crumb-link">Home</a>
+            <span class="crumb-separator">/</span>
+            <a href="services.html" class="crumb-link">Services</a>
+            <span class="crumb-separator">/</span>
+            <span id="breadcrumb-service-title" class="crumb-current">Cheese &amp; Wine Pairing</span>
+          </nav>
+
+          <span id="service-badge" class="script-badge">— Sommelier Masterclass —</span>
+          
+          <h1 id="service-title" class="srv-details-hero-title">
+            Master Sommelier <span class="highlight-gold">Cheese &amp; Wine</span> Pairing Experience
+          </h1>
+
+          <p id="service-tagline" class="srv-details-hero-narrative">
+            Harmonized pairing menus crafted by Master Sommeliers, matching vintage European wines, champagnes, and ports with rare subterranean cave-aged artisanal cheeses.
+          </p>
+
+          <!-- CTA Buttons matching brand round pill standard -->
+          <div class="srv-details-hero-ctas">
+            <a href="contact.html" class="btn btn-primary">
+              Book Experience
+              <svg style="margin-left: 8px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#experience-breakdown" class="btn btn-secondary">
+              View Inclusions
+              <svg style="margin-left: 8px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Feature Metric Highlights Strip -->
+          <div class="srv-details-hero-highlights">
+            <div class="srv-highlight-item">
+              <div class="highlight-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div class="highlight-info">
+                <strong id="service-duration">2.5 Hours</strong>
+                <span>Guided Tasting</span>
+              </div>
+            </div>
+
+            <div class="srv-highlight-item">
+              <div class="highlight-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <div class="highlight-info">
+                <strong id="service-capacity">2 — 50 Guests</strong>
+                <span>Private &amp; Group</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Slanted Media Showcase -->
+        <div class="srv-details-hero-right">
+          <div class="slanted-media-frame">
+            <img id="service-hero-image" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80" alt="Sommelier Cheese &amp; Wine Pairing">
+            <div class="slanted-media-overlay"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         SECTION 2: EXPERIENCE OVERVIEW & KEY HIGHLIGHTS
+         ========================================================================== -->
+    <section id="experience-overview" class="srv-details-overview-section">
+      <div class="container">
+        
+        <div class="section-header scroll-reveal text-center">
+          <span class="script-badge">— The Connoisseur Journey —</span>
+          <h2>Key <span class="highlight-gold">Experience Highlights</span> &amp; Features</h2>
+          <p>Discover the signature elements, subterranean selections, and expert curation included in every bespoke service package.</p>
+        </div>
+
+        <div class="srv-features-grid">
+          
+          <div class="srv-feature-card scroll-reveal">
+            <div class="feature-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 22h8"/>
+                <path d="M12 15v7"/>
+                <path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5z"/>
+              </svg>
+            </div>
+            <h3>Expert Wine &amp; Cheese Pairings</h3>
+            <p>Hand-picked vintage wines paired with aged Reserve wheels according to flavor profiles, acidity notes, and terroir origins.</p>
+          </div>
+
+          <div class="srv-feature-card scroll-reveal delay-1">
+            <div class="feature-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3>Cave-Aged Cheese Selections</h3>
+            <p>Featuring rare European cheeses aged in temperature-controlled alpine rock cellars for unmatched rind aroma and texture.</p>
+          </div>
+
+          <div class="srv-feature-card scroll-reveal delay-2">
+            <div class="feature-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3>Interactive Tasting Masterclass</h3>
+            <p>Live story-telling of cheese history, pairing secrets, knife techniques, and milk fermentation science led by our head affineur.</p>
+          </div>
+
+          <div class="srv-feature-card scroll-reveal delay-3">
+            <div class="feature-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 12 20 22 4 22 4 12"/>
+                <rect x="2" y="7" width="20" height="5"/>
+                <line x1="12" y1="22" x2="12" y2="7"/>
+                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+              </svg>
+            </div>
+            <h3>Bespoke Artisanal Accompaniments</h3>
+            <p>Served alongside raw mountain wildflower honey, organic white fig preserves, handmade crackers, and gold-leaf garnish.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         SECTION 3: INCLUSIONS BREAKDOWN & TASTING MENU
+         ========================================================================== -->
+    <section id="experience-breakdown" class="srv-details-breakdown-section">
+      <div class="container">
+        
+        <div class="breakdown-wrapper">
+          <div class="breakdown-left scroll-reveal">
+            <span class="script-badge">— What's Included —</span>
+            <h2>Complete <span class="highlight-gold">Tasting Menu</span> &amp; Service Package</h2>
+            <p class="breakdown-intro">
+              Our white-glove team handles everything from custom table styling, silver platters, crystal glassware, sommelier presentation, to seamless cleanup.
+            </p>
+
+            <ul id="service-inclusions-list" class="inclusions-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>6 Rare Artisanal Cheeses (Subterranean Gouda, Truffled Brie, Cave Blue, Alpine Gruyère, Aged Comté, Chevre)</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>4 Reserve Vintage Wine &amp; Champagne Pairings (Grand Cru Burgundy, Vintage Port, Bordeaux Blend, Champagne)</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Artisanal Condiment Board (Raw Honeycomb, Dried Mission Figs, Truffle Honey, Candied Marcona Almonds)</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Dedicated Master Sommelier &amp; On-Site Service Attendant</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Custom Printed Tasting Cards &amp; Personalized Leather Keepsake Booklet</span>
+              </li>
+            </ul>
+
+            <div class="breakdown-cta">
+              <a href="contact.html" class="btn btn-primary">
+                Reserve Your Date
+                <svg style="margin-left: 8px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="breakdown-right scroll-reveal delay-1">
+            <div class="tasting-menu-card">
+              <div class="menu-card-badge">Signature Flight</div>
+              <h3 id="tasting-menu-heading">Curated Tasting &amp; Pairing Menu</h3>
+              
+              <div id="tasting-menu-list">
+                <div class="menu-item-row">
+                  <div class="item-course">Course I</div>
+                  <div class="item-details">
+                    <strong>Aged Delice de Bourgogne &amp; Blanc de Blancs</strong>
+                    <span>Triple-cream French cheese matched with crisp citrus champagne notes.</span>
+                  </div>
+                </div>
+
+                <div class="menu-item-row">
+                  <div class="item-course">Course II</div>
+                  <div class="item-details">
+                    <strong>36-Month Comté &amp; Chardonnay</strong>
+                    <span>Nutty brown-butter crystalline cheese paired with oaky white burgundy.</span>
+                  </div>
+                </div>
+
+                <div class="menu-item-row">
+                  <div class="item-course">Course III</div>
+                  <div class="item-details">
+                    <strong>Perigord Black Truffle Pecorino &amp; Barolo</strong>
+                    <span>Earthy raw sheep's milk cheese accompanied by bold Piedmontese red.</span>
+                  </div>
+                </div>
+
+                <div class="menu-item-row">
+                  <div class="item-course">Course 4</div>
+                  <div class="item-details">
+                    <strong>Cave-Aged Roquefort &amp; Tawny Port</strong>
+                    <span>Piquant, creamy blue cheese contrasted with sweet caramelized port wine.</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         SECTION 4: LUXURY BOOKING BANNER CTA CARD
+         ========================================================================== -->
+    <section class="srv-details-cta-section">
+      <div class="container">
+        <div class="srv-details-cta-card scroll-reveal">
+          <span class="script-badge" style="color: var(--primary) !important;">— Tailored To Perfection —</span>
+          <h2>Planning a Private Gathering or Corporate Celebration?</h2>
+          <p>Contact our concierge team to customize menus, dietary preferences, guest capacities, and venue styling.</p>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn btn-primary">Reserve Your Experience</a>
+            <a href="services.html" class="btn btn-secondary">Explore Other Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Glassmorphic Footer Component (Loaded dynamically via js/app.js) -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="js/app.js?v=31"></script>
+  <script src="js/service-details.js?v=31"></script>
+</body>
+</html>
