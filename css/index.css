@@ -667,6 +667,7 @@ html[dir="rtl"] .offer-banner-grid {
   background-color: light-dark(var(--secondary), var(--primary));
   color: light-dark(#ffffff, #000000);
   border: 1.5px solid light-dark(var(--secondary), var(--primary));
+  border-radius: 50px;
 }
 
 .btn-offer:hover {
@@ -1048,6 +1049,11 @@ html[dir="rtl"] .row-action-box {
   font-size: 0.9rem;
   font-weight: 400;
   color: var(--text-muted);
+}
+
+/* Subscribe button pill shape matching Learn More button */
+.pricing-row .btn {
+  border-radius: 50px;
 }
 
 

@@ -546,6 +546,15 @@ html[data-theme="dark"] .proof-text strong {
   margin-left: 0.2rem;
 }
 
+/* Order Wheel button pill shape matching All Selections button & white hover text */
+.sig-buy-btn {
+  border-radius: 50px;
+}
+
+.sig-buy-btn:hover {
+  color: #ffffff !important;
+}
+
 /* ==========================================================================
    4. EDITORIAL PHOTOGRAPHY MOSAIC
    ========================================================================== */
