@@ -1151,8 +1151,8 @@ html[dir="rtl"] .row-action-box {
 }
 
 /* Inline styles extracted from index.html */
-.premium-bg-section { background-image: url('../assets/oak_wood_bg.png'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; }
-.premium-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: light-dark(rgba(255,249,238,0.94), rgba(23,20,17,0.94)); z-index:1; }
+.premium-bg-section { background-color: var(--bg-primary-theme); background-image: none; position: relative; }
+.premium-overlay { display: none; }
 .premium-container { position: relative; z-index: 5; }
 .btn-full-width { width: 100%; }
 .pairings-bg-section { background-image: url('../assets/slate_gold_bg.png'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; }
