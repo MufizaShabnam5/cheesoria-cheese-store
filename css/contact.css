@@ -417,7 +417,7 @@ html[data-theme="light"] .info-card-icon-wrap svg {
 .info-action-btn {
   width: 100%;
   padding: 0.68rem 1rem;
-  border-radius: 12px;
+  border-radius: 50px;
   background: light-dark(rgba(74, 46, 109, 0.06), rgba(244, 178, 35, 0.1));
   border: 1px solid var(--border-color);
   display: inline-flex;
@@ -659,7 +659,7 @@ html[data-theme="light"] .info-card-icon-wrap svg {
 .submit-btn {
   width: 100%;
   padding: 1.1rem;
-  border-radius: 14px;
+  border-radius: 50px;
   font-size: 1rem;
   justify-content: center;
 }

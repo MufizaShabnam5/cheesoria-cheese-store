@@ -435,7 +435,9 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   flex-shrink: 0;
-  width: 75px;
+  min-width: 90px;
+  width: auto;
+  white-space: nowrap;
   padding-top: 3px;
 }
 
@@ -649,8 +651,10 @@
   }
 
   .item-course {
-    width: 68px;
+    min-width: 85px;
+    width: auto;
     font-size: 0.75rem;
+    white-space: nowrap;
   }
 
   .item-details strong {
