@@ -451,15 +451,35 @@ html[dir="rtl"] .eye-toggle-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.35rem;
+  gap: 0.4rem;
   box-shadow: 0 4px 12px rgba(244, 178, 35, 0.28);
   transition: var(--transition-fast);
+}
+
+.auth-submit-btn .btn-arrow-icon {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
 }
 
 .auth-submit-btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 18px rgba(244, 178, 35, 0.38);
   color: #000000;
+}
+
+.auth-submit-btn:hover .btn-arrow-icon {
+  transform: translateX(3px);
+}
+
+html[dir="rtl"] .auth-submit-btn .btn-arrow-icon {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .auth-submit-btn:hover .btn-arrow-icon {
+  transform: translateX(-3px) scaleX(-1);
 }
 
 .auth-submit-btn:active {
