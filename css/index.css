@@ -541,6 +541,9 @@ html[data-theme="dark"] .cheese-3d-glow {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .product-price {
@@ -548,6 +551,8 @@ html[data-theme="dark"] .cheese-3d-glow {
   font-weight: 700;
   color: var(--primary); /* Gold in both modes */
   font-family: 'Playfair Display', serif;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 /* Buy Now Button */
@@ -563,6 +568,9 @@ html[data-theme="dark"] .cheese-3d-glow {
   cursor: pointer;
   transition: var(--transition-fast);
   white-space: nowrap;
+  flex-shrink: 0;
+  text-align: center;
+  min-width: 95px;
 }
 
 html[data-theme="dark"] .btn-buy-now {

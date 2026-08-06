@@ -723,11 +723,33 @@ html[dir="rtl"] .btn-read-story:hover .arrow-icon {
   transition: var(--transition-fast);
 }
 
-.bookmark-btn:hover,
-.bookmark-btn.active {
-  background: light-dark(#FFFFFF, rgba(255, 255, 255, 0.18));
+.bookmark-btn .bookmark-svg {
+  stroke: var(--text-muted);
+  fill: none;
+  transition: var(--transition-fast);
+}
+
+.bookmark-btn:hover {
+  background: light-dark(rgba(244, 178, 35, 0.15), rgba(244, 178, 35, 0.2));
   border-color: var(--primary);
   transform: scale(1.06);
+}
+
+.bookmark-btn:hover .bookmark-svg {
+  stroke: var(--primary);
+  fill: var(--primary);
+}
+
+.bookmark-btn.active {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 4px 14px rgba(244, 178, 35, 0.4) !important;
+  transform: scale(1.06);
+}
+
+.bookmark-btn.active .bookmark-svg {
+  stroke: #1a1200 !important;
+  fill: #1a1200 !important;
 }
 
 
@@ -929,31 +951,48 @@ html[dir="rtl"] .card-cat-badge {
 }
 
 .bookmark-btn-sm {
-  background: none;
-  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: light-dark(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.08));
+  border: 1px solid var(--border-color);
   cursor: pointer;
-  padding: 0.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.75;
+  opacity: 1;
   transition: var(--transition-fast);
 }
 
 .bookmark-btn-sm .bookmark-svg {
   stroke: var(--text-muted);
+  fill: none;
   transition: var(--transition-fast);
 }
 
-.bookmark-btn-sm:hover .bookmark-svg,
-.bookmark-btn-sm.active .bookmark-svg {
+.bookmark-btn-sm:hover {
+  background: light-dark(rgba(244, 178, 35, 0.15), rgba(244, 178, 35, 0.2));
+  border-color: var(--primary);
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.bookmark-btn-sm:hover .bookmark-svg {
   stroke: var(--primary);
   fill: var(--primary);
 }
 
-.bookmark-btn-sm:hover {
-  opacity: 1;
-  transform: scale(1.15);
+.bookmark-btn-sm.active {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  opacity: 1 !important;
+  box-shadow: 0 4px 14px rgba(244, 178, 35, 0.4) !important;
+  transform: scale(1.08);
+}
+
+.bookmark-btn-sm.active .bookmark-svg {
+  stroke: #1a1200 !important;
+  fill: #1a1200 !important;
 }
 
 .card-hover-arrow-wrap {

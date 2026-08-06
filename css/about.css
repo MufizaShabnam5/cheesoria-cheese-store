@@ -148,6 +148,7 @@
   letter-spacing: 0.05em;
   font-family: 'Inter', sans-serif;
   transition: var(--transition-smooth);
+  gap: 0.5em !important;
 }
 
 /* Compact Luxury Hero Stats Row */

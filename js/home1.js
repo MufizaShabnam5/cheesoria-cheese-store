@@ -50,7 +50,7 @@ function initHome1BuyButtons() {
       
       // Animated confirmation toast / alert
       const originalText = btn.textContent;
-      btn.textContent = '✓ Added to Tasting Cart!';
+      btn.textContent = '✓ Added!';
       btn.style.backgroundColor = '#2e7d32';
       btn.style.borderColor = '#2e7d32';
       btn.style.color = '#ffffff';
