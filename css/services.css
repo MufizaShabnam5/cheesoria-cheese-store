@@ -1558,8 +1558,28 @@ html[dir="rtl"] .srv-faq-question {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .step-node {
+    z-index: 5 !important;
+    background: var(--bg-primary-theme, #fff8f0) !important;
+  }
+
   .srv-timeline-track::before {
     top: 40px;
+    left: 16%;
+    right: 16%;
+    z-index: 1;
+  }
+
+  /* Connecting line for Steps 4 & 5 on iPad Mini */
+  .srv-timeline-step:nth-child(4)::after {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    z-index: 1;
   }
 
   .why-choose-grid {
@@ -1639,6 +1659,40 @@ html[dir="rtl"] .srv-faq-question {
     margin-left: -1.4rem;
     margin-right: -1.4rem;
     height: 175px;
+  }
+}
+
+/* Nest Hub Specific Display Optimization (1024px Viewport) */
+@media (min-width: 1020px) and (max-width: 1028px), (width: 1024px) and (height: 600px) {
+  /* Simple & Flawless Section - Package Card Coolant Line Fix & Step Cards Alignment */
+  .srv-timeline-track {
+    gap: 0.8rem !important;
+  }
+  .step-content-card {
+    padding: 1.2rem 0.8rem !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+  }
+  .step-desc {
+    font-size: 0.8rem !important;
+    line-height: 1.42 !important;
+    letter-spacing: -0.015em !important;
+    word-spacing: -0.02em !important;
+    min-height: 4.3em !important;
+  }
+  /* Package Step Card (Step 3) - Prevent 'coolant' from breaking into a lone line */
+  .srv-timeline-step:nth-child(3) .step-desc {
+    letter-spacing: -0.02em !important;
+    word-spacing: -0.03em !important;
+  }
+
+  /* Services Cards Grid - Wholesale Supply & B2B Distribution 2-Line Title Fix */
+  .srv-card-title {
+    font-size: 1.05rem !important;
+    line-height: 1.25 !important;
+    min-height: 2.7rem !important;
   }
 }
 

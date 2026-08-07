@@ -1469,6 +1469,143 @@ html[dir="rtl"] .row-action-box {
   .crate-perks { margin-top: 1.8rem; padding-top: 0; }
 }
 
+/* Nest Hub & Nest Hub Max Specific Display Optimization (1024px Viewport) */
+@media (min-width: 1020px) and (max-width: 1028px), (width: 1024px) and (height: 600px) {
+  /* Crafting Luxury Cheese Section - 3 Cards Alignment & 1-Line Headings */
+  .premium-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.2rem !important;
+    align-items: stretch !important;
+  }
+  .premium-card {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    height: 100% !important;
+    padding: 1.5rem 1rem !important;
+    gap: 0.6rem !important;
+  }
+  .premium-card-media {
+    width: calc(100% + 2rem) !important;
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
+    margin-top: -1.5rem !important;
+  }
+  .premium-card-title {
+    font-size: 1.05rem !important;
+    line-height: 1.3 !important;
+    white-space: nowrap !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .premium-card-text {
+    font-size: 0.82rem !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Club Section */
+  .club-grid {
+    grid-template-columns: 1fr 1.05fr !important;
+    gap: 1.8rem !important;
+    align-items: flex-start !important;
+  }
+  .club-showcase {
+    gap: 0.6rem !important;
+    justify-content: flex-start !important;
+    height: auto !important;
+  }
+  .club-box-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 210px !important;
+  }
+  .crate-perks {
+    margin-top: 0.6rem !important;
+    padding-top: 0 !important;
+  }
+  .perks-heading {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.5rem !important;
+    padding-bottom: 0.3rem !important;
+  }
+  .perks-list {
+    gap: 0.5rem !important;
+  }
+  .perks-list li {
+    font-size: 0.84rem !important;
+    line-height: 1.35 !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Compact right pricing column so it matches left side height on Nest Hub */
+  .club-pricing {
+    gap: 0.8rem !important;
+  }
+  .club-pricing-title {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.4rem !important;
+    padding-bottom: 0.3rem !important;
+  }
+  .club-rows-container {
+    gap: 0.5rem !important;
+  }
+  .pricing-row {
+    grid-template-columns: 1.5fr 1fr !important;
+    gap: 1rem !important;
+    padding: 0.75rem 0 !important;
+  }
+  .tier-name {
+    font-size: 1.05rem !important;
+  }
+  .tier-desc {
+    font-size: 0.8rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+  .tier-features-list {
+    gap: 0.2rem !important;
+  }
+  .tier-features-list li {
+    font-size: 0.78rem !important;
+  }
+  .tier-price {
+    font-size: 1.25rem !important;
+  }
+  .btn-sm {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Nest Hub Max Specific Display Optimization (1280px x 800px Viewport) */
+@media (min-width: 1275px) and (max-width: 1285px), (width: 1280px) and (height: 800px) {
+  /* Words of Excellence (Testimonials) Section - 5-Line Paragraph Alignment across all 4 Cards */
+  .testimonial-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1.5rem !important;
+    align-items: stretch !important;
+  }
+  .testimonial-card {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+    padding: 2rem 1.4rem 1.8rem 1.4rem !important;
+  }
+  .testimonial-text {
+    font-size: 1.02rem !important;
+    line-height: 1.7 !important;
+    min-height: 8.5em !important; /* Ensures exact 5-line paragraph height across all 4 cards */
+    margin-bottom: 1.5rem !important;
+  }
+  .testimonial-author {
+    margin-top: auto !important;
+  }
+}
+
 /* ==========================================================================
    HERO RTL OVERFLOW FIX (index.html & home1.html)
    ========================================================================== */

@@ -1053,6 +1053,7 @@ html[data-theme="dark"] .vip-tier-tag.gold-tag {
   padding: 1.8rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   flex-grow: 1;
 }
 
@@ -1061,12 +1062,16 @@ html[data-theme="dark"] .vip-tier-tag.gold-tag {
   font-weight: 700;
   margin-bottom: 0.6rem;
   line-height: 1.3;
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
 }
 
 .make-desc {
   font-size: 0.88rem;
   color: var(--text-muted);
   line-height: 1.6;
+  min-height: 4.8em;
 }
 
 .step-card {
@@ -1663,6 +1668,7 @@ html[data-theme="dark"] .journal-link {
   .make-info {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     flex-grow: 1;
     padding: 1.3rem 0.9rem;
   }
@@ -1673,11 +1679,98 @@ html[data-theme="dark"] .journal-link {
     letter-spacing: -0.015em;
     min-height: 2.6rem;
     margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
   }
 
   .make-desc {
     font-size: 0.82rem;
     line-height: 1.5;
+    min-height: 4.5em;
+  }
+}
+
+/* Nest Hub Specific Display Optimization (1024px x 600px Viewport) */
+@media (min-width: 1020px) and (max-width: 1028px), (width: 1024px) and (height: 600px) {
+  .make-cheese-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0.8rem !important;
+    align-items: stretch !important;
+  }
+  .make-step-card {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+  }
+  .make-media {
+    height: 180px !important;
+    width: 100% !important;
+  }
+  .make-info {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    flex-grow: 1 !important;
+    padding: 1.1rem 0.75rem !important;
+  }
+  .make-title {
+    font-size: 0.96rem !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.015em !important;
+    height: 2.5rem !important;
+    min-height: 2.5rem !important;
+    margin-bottom: 0.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .make-desc {
+    font-size: 0.8rem !important;
+    line-height: 1.45 !important;
+    height: 8.7em !important;
+    min-height: 8.7em !important; /* Locks exact 6-line paragraph height across all 4 cards */
+    margin-bottom: 0 !important;
+    display: block !important;
+    overflow: hidden !important;
+  }
+}
+
+/* Nest Hub Max Specific Display Optimization (1280px x 800px Viewport) */
+@media (min-width: 1275px) and (max-width: 1285px), (width: 1280px) and (height: 800px) {
+  .make-cheese-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1rem !important;
+    align-items: stretch !important;
+  }
+  .make-step-card {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .make-info {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    flex-grow: 1 !important;
+    padding: 1.3rem 0.9rem !important;
+  }
+  .make-title {
+    font-size: 1.02rem !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.015em !important;
+    min-height: 2.6rem !important;
+    margin-bottom: 0.6rem !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .make-desc {
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
+    min-height: 7.5em !important; /* Locks exact 5-line paragraph height across all 4 cards */
+    margin-bottom: 0 !important;
+  }
+  .make-step-card:nth-child(4) .make-desc {
+    word-spacing: 0.03em !important;
   }
 }
 

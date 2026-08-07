@@ -1613,6 +1613,17 @@ html[dir="rtl"] .craft-step-badge {
   }
 }
 
+/* Nest Hub Specific Display Optimization (1024px Viewport) */
+@media (min-width: 1020px) and (max-width: 1028px), (width: 1024px) and (height: 600px) {
+  /* Unmatched Distinction Section - Sommelier Taste Profiles Title 2 Lines */
+  .features-grid .feature-card:nth-child(5) .feature-title {
+    max-width: 170px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+}
+
 
 /* 4. Large Desktop (> 1280px) */
 @media (min-width: 1280px) {
