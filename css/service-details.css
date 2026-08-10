@@ -635,33 +635,25 @@
 
   .srv-details-hero-right {
     position: relative;
-    width: calc(100% - 2.5rem);
-    height: auto;
-    max-height: 380px;
+    width: 100%;
+    height: 280px;
     margin: 0 auto;
     border-radius: 20px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .slanted-media-frame {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 100%;
     clip-path: none !important;
     border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .slanted-media-frame img {
     width: 100%;
-    height: auto;
-    max-height: 380px;
-    object-fit: contain !important;
+    height: 100%;
+    object-fit: cover !important;
     object-position: center center !important;
     border-radius: 20px;
   }
@@ -695,22 +687,51 @@
   .breakdown-wrapper {
     grid-template-columns: 1fr;
     gap: 2.2rem;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .inclusions-list li {
+    font-size: 0.88rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .tasting-menu-card {
-    padding: 1.8rem 1.15rem;
+    padding: 1.6rem 1.1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .menu-item-row {
+    gap: 0.85rem;
   }
 
   .item-course {
-    min-width: 85px;
-    width: auto;
+    min-width: 72px;
+    flex-shrink: 0;
     font-size: 0.75rem;
     white-space: nowrap;
   }
 
+  .item-details {
+    flex: 1;
+    min-width: 0;
+  }
+
   .item-details strong {
-    font-size: clamp(0.78rem, 3.4vw, 0.95rem);
-    white-space: nowrap;
+    font-size: clamp(0.84rem, 3.6vw, 0.95rem);
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.35;
+  }
+
+  .item-details span {
+    font-size: 0.82rem;
+    line-height: 1.4;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .srv-details-cta-card {
@@ -850,12 +871,115 @@
 
 /* Nest Hub Specific Display Optimization (1024px Viewport) */
 @media (min-width: 1020px) and (max-width: 1028px), (width: 1024px) and (height: 600px) {
+  /* Hero Section Vertical Space & Layout Balance on Nest Hub */
+  .srv-details-hero-section {
+    height: calc(100dvh - var(--navbar-height, 80px)) !important;
+    min-height: 500px !important;
+    padding: 0 !important;
+  }
+
+  .srv-details-hero-grid {
+    grid-template-columns: 52% 48% !important;
+    height: 100% !important;
+    align-items: stretch !important;
+  }
+
+  .srv-details-hero-left {
+    height: 100% !important;
+    padding: 1.1rem 2.2rem !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+  }
+
+  .srv-details-hero-right,
+  .slanted-media-frame {
+    height: 100% !important;
+  }
+
+  .srv-details-hero-title {
+    font-size: clamp(1.6rem, 2.6vw, 2.2rem) !important;
+    line-height: 1.18 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .srv-details-hero-narrative {
+    font-size: 0.92rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 0.6rem !important;
+  }
+
+  .srv-details-hero-ctas {
+    margin-bottom: 0.6rem !important;
+    gap: 0.85rem !important;
+  }
+
+  .srv-details-hero-ctas .btn {
+    padding: 0.6rem 1.4rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .srv-details-hero-highlights {
+    padding: 0.5rem 0.95rem !important;
+    gap: 1.2rem !important;
+    border-radius: 12px !important;
+    margin-top: 0 !important;
+  }
+
+  .highlight-icon {
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 8px !important;
+  }
+
+  .highlight-icon svg {
+    width: 17px !important;
+    height: 17px !important;
+  }
+
+  .highlight-info strong {
+    font-size: 0.82rem !important;
+  }
+
+  .highlight-info span {
+    font-size: 0.7rem !important;
+  }
+
   /* Expert Wine & Cheese Pairings Heading 3-Line Fix on Nest Hub */
   .srv-features-grid .srv-feature-card:nth-child(1) h3 {
     max-width: 150px !important;
     margin-left: auto !important;
     margin-right: auto !important;
     text-align: center !important;
+  }
+
+  /* Signature Flight Tasting Menu Card Right Border & Top/Bottom Alignment Fix on Nest Hub */
+  .breakdown-wrapper {
+    grid-template-columns: 52% 48%;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  .breakdown-right {
+    display: flex;
+  }
+
+  .tasting-menu-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.5rem 2.2rem;
+    box-sizing: border-box;
+  }
+
+  .tasting-menu-card .menu-card-badge {
+    display: inline-block !important;
+    width: max-content !important;
+    max-width: max-content !important;
+    align-self: flex-start !important;
+    margin-right: auto !important;
   }
 }
 
