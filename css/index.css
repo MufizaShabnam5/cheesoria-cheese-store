@@ -1598,7 +1598,7 @@ html[dir="rtl"] .row-action-box {
   .testimonial-text {
     font-size: 1.02rem !important;
     line-height: 1.7 !important;
-    min-height: 8.5em !important; /* Ensures exact 5-line paragraph height across all 4 cards */
+    min-height: 9.2em !important; /* Ensures exact 5-line paragraph height alignment across all 4 cards including Sarah J. */
     margin-bottom: 1.5rem !important;
   }
   .testimonial-author {
