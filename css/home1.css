@@ -1702,6 +1702,54 @@ html[data-theme="dark"] .journal-link {
 
 /* Nest Hub Specific Display Optimization (1024px x 600px Viewport) */
 @media (min-width: 1020px) and (max-width: 1028px), (width: 1024px) and (height: 600px) {
+  /* VIP Crate Perks 3-Line Aligned Fix on Nest Hub */
+  .vip-perk-item span {
+    font-size: 0.78rem !important;
+    line-height: 1.35 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+  .vip-perk-item {
+    padding: 0.8rem 0.9rem !important;
+    gap: 0.7rem !important;
+  }
+  .vip-perk-item strong {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.15rem !important;
+  }
+
+  /* Cold-Chain Shipping 1-Line Keep Fix on Nest Hub */
+  .vip-trust-strip span,
+  .vip-perk-item strong,
+  .perks-list li strong {
+    white-space: nowrap !important;
+  }
+
+  /* Product Rating Count 1-Line Keep Fix on Nest Hub */
+  .rating-count {
+    white-space: nowrap !important;
+    font-size: 0.78rem !important;
+  }
+  .product-rating {
+    flex-wrap: nowrap !important;
+    gap: 0.35rem !important;
+  }
+  .stars {
+    font-size: 0.88rem !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  /* Product Name 2-Line Alignment Fix on Nest Hub */
+  .product-name {
+    font-size: 1.15rem !important;
+    min-height: 2.8rem !important;
+    line-height: 1.3 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
   .make-cheese-grid {
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 0.8rem !important;
