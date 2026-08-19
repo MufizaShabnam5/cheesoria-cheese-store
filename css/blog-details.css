@@ -239,6 +239,10 @@ html[data-theme="dark"] .cat-badge-pill {
   color: #FFFFFF;
   font-size: 0.8rem;
   font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 
@@ -416,6 +420,10 @@ html[data-theme="dark"] .article-blockquote {
   color: #FFFFFF;
   font-size: 0.82rem;
   font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* Sommelier Pairing Table */
@@ -897,11 +905,15 @@ html[data-theme="dark"] .article-blockquote {
     height: 240px;
     width: 100%;
   }
+  .image-caption-overlay,
   .article-img-caption {
     font-size: 0.76rem;
     padding: 0.65rem 0.9rem;
     overflow-wrap: break-word;
     word-break: break-word;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
   }
   .related-stories-list {
     display: grid;
@@ -1029,11 +1041,15 @@ html[data-theme="dark"] .article-blockquote {
     width: 100%;
     object-fit: cover;
   }
+  .image-caption-overlay,
   .article-img-caption {
     font-size: 0.72rem;
     padding: 0.5rem 0.75rem;
     overflow-wrap: break-word;
     word-break: break-word;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
   }
   .author-bio-card {
     flex-direction: column;

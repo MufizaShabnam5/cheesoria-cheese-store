@@ -399,6 +399,8 @@ html[dir="rtl"] .slanted-image-wrapper,
 .our-story-section {
   padding: 3rem 0;
   position: relative;
+  background-color: var(--bg-light-theme);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .story-timeline-wrapper {
@@ -552,6 +554,8 @@ html[dir="rtl"] .timeline-card {
   padding: 3rem 0;
   position: relative;
   overflow: hidden;
+  background-color: var(--bg-primary-theme);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .craft-pipeline-wrapper {
@@ -772,6 +776,9 @@ html[dir="rtl"] .craft-step-badge {
    ========================================================================== */
 .why-cheesoria-section {
   padding: 3rem 0;
+  position: relative;
+  background-color: var(--bg-light-theme);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .features-grid {
@@ -851,6 +858,9 @@ html[dir="rtl"] .craft-step-badge {
    ========================================================================== */
 .cheesemakers-section {
   padding: 3rem 0;
+  position: relative;
+  background-color: var(--bg-primary-theme);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .cheesemakers-grid {
@@ -967,6 +977,10 @@ html[dir="rtl"] .craft-step-badge {
    ========================================================================== */
 .promise-cta-section {
   padding: 2.5rem 0;
+  position: relative;
+  background-color: var(--bg-light-theme);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* CTA Glass Banner */

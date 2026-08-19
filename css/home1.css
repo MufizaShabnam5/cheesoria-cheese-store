@@ -808,6 +808,13 @@ html[data-theme="dark"] .proof-text strong {
   line-height: 1.4;
 }
 
+.vip-pricing-section {
+  position: relative;
+  background-color: var(--bg-primary-theme);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
 .vip-pricing-header {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -969,6 +976,9 @@ html[data-theme="dark"] .vip-tier-tag.gold-tag {
    ========================================================================== */
 .make-cheese-section {
   position: relative;
+  background-color: var(--bg-light-theme);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .make-cheese-grid {
