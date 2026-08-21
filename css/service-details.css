@@ -1,6 +1,3 @@
-/* ==========================================================================
-   Cheesoria Artisanal Boutique - Luxury Service Detail Page Stylesheet
-   ========================================================================== */
 
 .service-details-page-body {
   background-color: var(--bg-light-theme);
@@ -13,7 +10,6 @@
   width: 100%;
 }
 
-/* Script Cursive Badge Matching Brand Standard */
 .service-details-page-body .script-badge {
   font-family: 'Alex Brush', cursive !important;
   font-size: clamp(2rem, 3.5vw, 2.5rem);
@@ -28,7 +24,6 @@
   padding: 0 !important;
 }
 
-/* Round Pill Buttons Matching Brand Standard */
 .service-details-page-body .btn,
 .service-details-page-body .btn-primary,
 .service-details-page-body .btn-secondary {
@@ -42,9 +37,6 @@
   transition: var(--transition-smooth);
 }
 
-/* ==========================================================================
-   SECTION 1: HERO — Split Grid with Slanted Media Showcase
-   ========================================================================== */
 .srv-details-hero-section {
   position: relative;
   padding: 0 !important;
@@ -77,7 +69,6 @@
   z-index: 5;
 }
 
-/* Breadcrumb Navigation */
 .srv-details-breadcrumb {
   display: flex;
   align-items: center;
@@ -136,7 +127,6 @@
   flex-wrap: wrap;
 }
 
-/* Highlights Strip */
 .srv-details-hero-highlights {
   display: flex;
   align-items: center;
@@ -190,7 +180,6 @@
   display: block;
 }
 
-/* Slanted Media Frame */
 .srv-details-hero-right {
   position: relative;
   height: 100%;
@@ -233,9 +222,6 @@
   pointer-events: none;
 }
 
-/* ==========================================================================
-   SECTION 2: FEATURES GRID
-   ========================================================================== */
 .srv-details-overview-section {
   padding: 5.5rem 0;
   background-color: var(--bg-light-theme);
@@ -319,9 +305,6 @@
   color: var(--text-muted);
 }
 
-/* ==========================================================================
-   SECTION 3: INCLUSIONS & MENU BREAKDOWN
-   ========================================================================== */
 .srv-details-breakdown-section {
   padding: 5.5rem 0;
   background-color: var(--bg-primary-theme);
@@ -378,7 +361,6 @@
   margin-top: 2px;
 }
 
-/* Tasting Menu Card */
 .tasting-menu-card {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
@@ -460,9 +442,6 @@
   display: block;
 }
 
-/* ==========================================================================
-   SECTION 4: LUXURY CTA CARD
-   ========================================================================== */
 .srv-details-cta-section {
   padding: 5.5rem 0;
   background-color: var(--bg-light-theme);
@@ -572,11 +551,6 @@
   box-shadow: 0 6px 20px rgba(74, 46, 109, 0.4) !important;
 }
 
-/* ==========================================================================
-   RESPONSIVE DESIGN BREAKPOINTS ACROSS ALL 4 SPECIFIED MEDIA QUERIES
-   ========================================================================== */
-
-/* 1. MOBILE (< 640px) */
 @media (max-width: 639.98px) {
   .srv-details-hero-section {
     height: auto;
@@ -755,7 +729,6 @@
   }
 }
 
-/* 2. TABLET (640px - 1024px) */
 @media (min-width: 640px) and (max-width: 1023.98px) {
   .srv-details-hero-section {
     height: auto !important;
@@ -816,7 +789,6 @@
     height: 22px;
   }
 
-  /* Cave-Aged Cheese Selections Heading 2-Line Fix on iPad Mini */
   .srv-features-grid .srv-feature-card:nth-child(2) h3 {
     max-width: 220px !important;
     margin-left: auto !important;
@@ -830,7 +802,6 @@
   }
 }
 
-/* 3. DESKTOP (1024px - 1280px) */
 @media (min-width: 1024px) and (max-width: 1279.98px) {
   .srv-details-hero-section {
     height: calc(100dvh - var(--navbar-height, 80px)) !important;
@@ -869,9 +840,7 @@
   }
 }
 
-/* Nest Hub Specific Display Optimization (1024px Viewport) */
 @media (min-width: 1020px) and (max-width: 1028px), (width: 1024px) and (height: 600px) {
-  /* Hero Section Vertical Space & Layout Balance on Nest Hub */
   .srv-details-hero-section {
     height: calc(100dvh - var(--navbar-height, 80px)) !important;
     min-height: 500px !important;
@@ -945,7 +914,6 @@
     font-size: 0.7rem !important;
   }
 
-  /* Expert Wine & Cheese Pairings Heading 3-Line Fix on Nest Hub */
   .srv-features-grid .srv-feature-card:nth-child(1) h3 {
     max-width: 150px !important;
     margin-left: auto !important;
@@ -953,7 +921,6 @@
     text-align: center !important;
   }
 
-  /* Signature Flight Tasting Menu Card Right Border & Top/Bottom Alignment Fix on Nest Hub */
   .breakdown-wrapper {
     grid-template-columns: 52% 48%;
     gap: 1.5rem;
@@ -983,7 +950,6 @@
   }
 }
 
-/* 4. LARGE SCREEN (> 1280px) */
 @media (min-width: 1280px) {
   .srv-details-hero-section {
     height: calc(100dvh - var(--navbar-height, 80px)) !important;

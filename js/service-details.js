@@ -1,10 +1,7 @@
-/**
- * Cheesoria Artisanal Boutique - Service Details Dynamic Data & Interactive Handler
- */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Database of Bespoke Services
   const SERVICES_DATA = {
     'artisan-selection': {
       title: 'Artisan Cheese Selection & Tasting Vault',
@@ -161,13 +158,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Extract ?id= from URL
   const urlParams = new URLSearchParams(window.location.search);
   const serviceId = urlParams.get('id') || 'wine-pairing';
 
   const data = SERVICES_DATA[serviceId] || SERVICES_DATA['wine-pairing'];
 
-  // Populate HTML elements
   const elBreadcrumbTitle = document.getElementById('breadcrumb-service-title');
   const elBadge = document.getElementById('service-badge');
   const elTitle = document.getElementById('service-title');
@@ -188,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
     elHeroImage.alt = data.title;
   }
 
-  // Populate Inclusions List
   if (elInclusionsList && data.inclusions) {
     elInclusionsList.innerHTML = data.inclusions.map(item => `
       <li>
@@ -198,7 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
     `).join('');
   }
 
-  // Populate Tasting Menu List
   const elTastingMenuList = document.getElementById('tasting-menu-list');
   if (elTastingMenuList && data.tastingMenu) {
     elTastingMenuList.innerHTML = data.tastingMenu.map(item => `

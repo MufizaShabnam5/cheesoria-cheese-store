@@ -6,15 +6,12 @@
   <title>Article Gazette Chronicles | Cheesoria Luxury Cheese Boutique</title>
   <meta name="description" content="Read in-depth master affineur chronicles, subterranean cave aging science, sommelier wine pairing masterclasses, and artisanal cheese history.">
   
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   
-  <!-- Core Google Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
-  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/global.css?v=29">
   <link rel="stylesheet" href="css/navbar.css?v=29">
   <link rel="stylesheet" href="css/footer.css?v=29">
@@ -24,18 +21,13 @@
 </head>
 <body class="blog-details-body">
 
-  <!-- Sticky Glassmorphic Navbar Component -->
   <div id="navbar"></div>
 
   <main class="blog-details-main">
     
-    <!-- ==========================================================================
-         HERO SECTION: ARTICLE HEADER & VISUAL BANNER
-         ========================================================================== -->
     <section class="details-hero-section">
       <div class="blog-container">
         
-        <!-- Breadcrumb Navigation -->
         <nav class="details-breadcrumb" aria-label="Breadcrumb">
           <a href="index.html" class="crumb-link">Home</a>
           <span class="crumb-separator">/</span>
@@ -46,7 +38,6 @@
 
         <div class="details-hero-grid">
           
-          <!-- Hero Header Content -->
           <div class="details-hero-header">
             <div class="details-category-bar">
               <span id="article-cat-badge" class="cat-badge-pill">Master Affineur</span>
@@ -64,7 +55,6 @@
               Deep within 80-foot limestone caverns, temperature and humidity remain in flawless equilibrium. Discover how our master affineurs nurture crystalline tyrosine clusters and velvety natural rinds.
             </p>
 
-            <!-- Metadata Row -->
             <div class="details-meta-row">
               <div class="author-meta-block">
                 <div class="author-avatar-wrap">
@@ -102,7 +92,6 @@
 
           </div>
 
-          <!-- Hero Image Card -->
           <div class="details-hero-media">
             <div class="details-image-card glass-card">
               <img 
@@ -122,19 +111,13 @@
       </div>
     </section>
 
-
-    <!-- ==========================================================================
-         MAIN ARTICLE CONTENT & SIDEBAR SECTION
-         ========================================================================== -->
     <section class="details-content-section">
       <div class="blog-container">
         
         <div class="details-layout-grid">
           
-          <!-- LEFT: ARTICLE MAIN BODY CONTENT -->
           <article class="details-main-body">
             
-            <!-- Executive Key Takeaways Callout Card -->
             <div class="key-takeaways-card glass-card">
               <div class="takeaways-header">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -147,12 +130,9 @@
               </ul>
             </div>
 
-            <!-- Main Dynamic Article HTML Body -->
             <div id="article-body-content" class="article-prose">
-              <!-- Dynamically populated via js/blog-details.js -->
             </div>
 
-            <!-- Article Author Bio Box -->
             <div class="author-bio-card glass-card">
               <div class="author-bio-avatar">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
@@ -166,7 +146,6 @@
               </div>
             </div>
 
-            <!-- Article Navigation Footer (Prev/Next) -->
             <div class="article-nav-row">
               <a href="#" id="prev-article-btn" class="article-nav-btn prev-btn glass-card">
                 <span class="nav-direction">← Previous Story</span>
@@ -178,14 +157,12 @@
               </a>
             </div>
 
-            <!-- Connoisseur Comments & Discussion Salon -->
             <section class="comments-section">
               <div class="comments-header">
                 <h3>Connoisseur Discussion &amp; Tasting Notes</h3>
                 <span id="comment-count-badge" class="comment-count">3 Notes</span>
               </div>
 
-              <!-- Comment Form -->
               <form id="comment-form" class="comment-form-card glass-card">
                 <h4>Share Your Tasting Experience</h4>
                 <div class="form-row-two">
@@ -199,19 +176,14 @@
                 </button>
               </form>
 
-              <!-- List of Comments -->
               <div id="comments-list-container" class="comments-list">
-                <!-- Dynamically populated comments -->
               </div>
             </section>
 
           </article>
 
-
-          <!-- RIGHT: SIDEBAR (TABLE OF CONTENTS & RELATED STORIES) -->
           <aside class="details-sidebar">
             
-            <!-- Table of Contents Widget -->
             <div class="details-sidebar-widget glass-card">
               <h4 class="widget-heading">Table of Contents</h4>
               <ul id="toc-list" class="toc-list">
@@ -222,15 +194,12 @@
               </ul>
             </div>
 
-            <!-- Related Articles Widget -->
             <div class="details-sidebar-widget glass-card">
               <h4 class="widget-heading">Recommended Gazette Stories</h4>
               <div id="related-articles-list" class="related-stories-list">
-                <!-- Dynamically populated -->
               </div>
             </div>
 
-            <!-- Return to Gazette Library Button -->
             <div class="sidebar-back-box">
               <a href="blog.html" class="btn-back-gazette">
                 <span>← Back to Gazette Library</span>
@@ -246,7 +215,6 @@
 
   </main>
 
-  <!-- Share Toast Modal -->
   <div id="details-toast" class="blog-toast glass-card hidden" role="alert">
     <div class="toast-icon">✨</div>
     <div class="toast-text">
@@ -256,10 +224,8 @@
     <button id="details-toast-close" class="toast-close-btn" aria-label="Close Toast">&times;</button>
   </div>
 
-  <!-- Sticky Footer Component -->
   <div id="footer"></div>
 
-  <!-- Core & Details JavaScript -->
   <script src="js/app.js"></script>
   <script src="js/blog-details.js"></script>
 </body>

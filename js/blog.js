@@ -1,6 +1,4 @@
-/* ==========================================================================
-   CHEESORIA LUXURY EDITORIAL BLOG JAVASCRIPT (js/blog.js)
-   ========================================================================== */
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initCategoryFilters();
@@ -10,9 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initLoadMore();
 });
 
-/* ==========================================================================
-   1. Category Pill Filtering Logic
-   ========================================================================== */
 function initCategoryFilters() {
   const categoryPills = document.querySelectorAll('.cat-pill');
   const blogCards = document.querySelectorAll('.blog-card');
@@ -43,12 +38,10 @@ function initCategoryFilters() {
       }
     });
 
-    // Update story count badge
     if (countBadge) {
       countBadge.textContent = `${visibleCount} ${visibleCount === 1 ? 'Story' : 'Stories'} Found`;
     }
 
-    // Toggle empty state display
     if (emptyState) {
       if (visibleCount === 0) {
         emptyState.classList.remove('hidden');
@@ -84,9 +77,6 @@ function initCategoryFilters() {
   }
 }
 
-/* ==========================================================================
-   2. Live Search Keyword Filtering
-   ========================================================================== */
 function initLiveSearch() {
   const searchInput = document.getElementById('blog-search-input');
   const searchClear = document.getElementById('blog-search-clear');
@@ -152,9 +142,6 @@ function initLiveSearch() {
   }
 }
 
-/* ==========================================================================
-   3. Bookmark / Like Toggle Handler
-   ========================================================================== */
 function initBookmarks() {
   const bookmarkBtns = document.querySelectorAll('.bookmark-btn, .bookmark-btn-sm');
 
@@ -175,9 +162,6 @@ function initBookmarks() {
   });
 }
 
-/* ==========================================================================
-   4. Newsletter Subscription Form Handler
-   ========================================================================== */
 function initNewsletterForms() {
   const mainForm = document.getElementById('main-newsletter-form');
   const sidebarForm = document.getElementById('sidebar-newsletter-form');
@@ -209,9 +193,6 @@ function initNewsletterForms() {
   }
 }
 
-/* ==========================================================================
-   5. Load More Stories Simulation
-   ========================================================================== */
 function initLoadMore() {
   const loadMoreBtn = document.getElementById('btn-load-more');
   if (!loadMoreBtn) return;
@@ -244,7 +225,6 @@ function initLoadMore() {
   });
 }
 
-/* Helper Toast Function */
 function showBlogToast(title, message) {
   const toast = document.getElementById('blog-toast');
   const toastTitle = document.getElementById('toast-title');

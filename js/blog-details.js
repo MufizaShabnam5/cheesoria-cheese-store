@@ -1,8 +1,5 @@
-/* ==========================================================================
-   Cheesoria Artisanal Boutique - Dynamic Blog Details Controller
-   ========================================================================== */
 
-// Complete Article Knowledge Database
+
 const BLOG_ARTICLES = {
   'subterranean-cave-aging': {
     id: 'subterranean-cave-aging',
@@ -569,8 +566,6 @@ const BLOG_ARTICLES = {
   }
 };
 
-
-// Initialization Logic
 document.addEventListener('DOMContentLoaded', () => {
   initBlogDetailsPage();
   initCommentSystem();
@@ -578,16 +573,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initBlogDetailsPage() {
-  // Extract article ID from URL parameters (?id=xxx)
   const urlParams = new URLSearchParams(window.location.search);
-  const articleId = urlParams.get('id') || 'subterranean-cave-aging'; // Default to featured story
+  const articleId = urlParams.get('id') || 'subterranean-cave-aging'; 
 
   const article = BLOG_ARTICLES[articleId] || BLOG_ARTICLES['subterranean-cave-aging'];
 
-  // Update Page Meta Title
   document.title = `${article.title} | Cheesoria Gazette`;
 
-  // Update Hero Section Elements
   setElementText('breadcrumb-active-title', article.title);
   setElementText('article-cat-badge', article.category);
   setElementText('article-hero-title', article.title);
@@ -597,7 +589,6 @@ function initBlogDetailsPage() {
   setElementText('article-readtime-val', article.readTime);
   setElementText('article-image-caption', article.imageCaption);
 
-  // Editor's Pick Badge Visibility
   const editorPickBadge = document.getElementById('article-editor-pick');
   if (editorPickBadge) {
     if (article.isEditorPick) {
@@ -607,30 +598,25 @@ function initBlogDetailsPage() {
     }
   }
 
-  // Hero Image Source
   const heroImg = document.getElementById('article-hero-image');
   if (heroImg) {
     heroImg.src = article.heroImage;
     heroImg.alt = article.title;
   }
 
-  // Populate Key Takeaways
   const takeawaysList = document.getElementById('takeaways-list');
   if (takeawaysList && article.takeaways) {
     takeawaysList.innerHTML = article.takeaways.map(item => `<li>${item}</li>`).join('');
   }
 
-  // Populate Main Article Body HTML
   const bodyContent = document.getElementById('article-body-content');
   if (bodyContent && article.contentHtml) {
     bodyContent.innerHTML = article.contentHtml;
   }
 
-  // Author Bio Card
   setElementText('author-bio-name', article.author);
   setElementText('author-bio-desc', article.authorBio);
 
-  // Populate Table of Contents
   const tocList = document.getElementById('toc-list');
   if (tocList && article.toc) {
     tocList.innerHTML = article.toc.map(item => `
@@ -638,27 +624,21 @@ function initBlogDetailsPage() {
     `).join('');
   }
 
-  // Populate Related Articles Sidebar Widget
   renderRelatedArticles(article.id);
 
-  // Configure Previous / Next Article Navigation
   setupArticleNavigation(article.id);
 }
-
 
 function setElementText(id, text) {
   const el = document.getElementById(id);
   if (el) el.textContent = text;
 }
 
-
 function renderRelatedArticles(currentId) {
   const relatedContainer = document.getElementById('related-articles-list');
   if (!relatedContainer) return;
 
-  // Filter out current article
   const keys = Object.keys(BLOG_ARTICLES).filter(k => k !== currentId);
-  // Pick 7 stories
   const selected = keys.slice(0, 7);
 
   relatedContainer.innerHTML = selected.map(key => {
@@ -677,7 +657,6 @@ function renderRelatedArticles(currentId) {
     `;
   }).join('');
 }
-
 
 function setupArticleNavigation(currentId) {
   const keys = Object.keys(BLOG_ARTICLES);
@@ -703,10 +682,6 @@ function setupArticleNavigation(currentId) {
   }
 }
 
-
-/* ==========================================================================
-   Comment System & Interactive Connoisseur Notes
-   ========================================================================== */
 const INITIAL_COMMENTS = [
   {
     name: 'Antoine de Saint-Germain',
@@ -748,10 +723,8 @@ function initCommentSystem() {
       INITIAL_COMMENTS.unshift(newComment);
       renderComments(INITIAL_COMMENTS);
 
-      // Reset form
       commentForm.reset();
 
-      // Show toast
       showDetailsToast('Note Published!', 'Your connoisseur tasting note has been published.');
     });
   }
@@ -785,10 +758,6 @@ function renderComments(list) {
   `).join('');
 }
 
-
-/* ==========================================================================
-   Share & Bookmark Toasts
-   ========================================================================== */
 function initShareActions() {
   const shareBtn = document.getElementById('article-share-btn');
   const bookmarkBtn = document.getElementById('article-bookmark-btn');

@@ -1,10 +1,4 @@
-/* ==========================================================================
-   CHEESORIA LUXURY CONTACT PAGE STYLESHEET (css/contact.css)
-   ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   1. HERO BANNER SECTION (50/50 SLANTED LAYOUT)
-   -------------------------------------------------------------------------- */
 .contact-hero-section {
   position: relative;
   padding: 0;
@@ -21,7 +15,6 @@
   width: 100%;
 }
 
-/* Left Content Column */
 .contact-hero-left {
   display: flex;
   flex-direction: column;
@@ -40,7 +33,6 @@
   letter-spacing: -0.01em;
 }
 
-/* Hero Title Colors Light & Dark Modes */
 .contact-hero-title .hero-text-primary {
   color: var(--primary);
 }
@@ -132,7 +124,6 @@ html[dir="dark"] .contact-hero-title .hero-text-secondary {
   flex-wrap: wrap;
 }
 
-/* Right Slanted Image Column */
 .contact-hero-right {
   position: relative;
   height: 100%;
@@ -184,7 +175,6 @@ html[dir="dark"] .contact-hero-title .hero-text-secondary {
   pointer-events: none;
 }
 
-/* Floating Branded Phone Screen Badge */
 .phone-display-badge {
   position: absolute;
   top: 48%;
@@ -236,7 +226,6 @@ html[dir="dark"] .contact-hero-title .hero-text-secondary {
   opacity: 0.9;
 }
 
-/* Floating Glass Badges on Slanted Image */
 .floating-badge {
   position: absolute;
   padding: 0.75rem 1.3rem;
@@ -292,9 +281,6 @@ html[dir="dark"] .contact-hero-title .hero-text-secondary {
   color: var(--text-muted);
 }
 
-/* --------------------------------------------------------------------------
-   2. ELEGANT CENTER-ALIGNED CONTACT CARDS BAR
-   -------------------------------------------------------------------------- */
 .contact-cards-section {
   padding: 3rem 0 3.2rem;
   position: relative;
@@ -450,9 +436,6 @@ html[data-theme="light"] .info-card-icon-wrap svg {
   transform: translateX(4px);
 }
 
-/* --------------------------------------------------------------------------
-   3. CONTACT FORM & SIDEBAR SECTION
-   -------------------------------------------------------------------------- */
 .contact-form-section {
   padding: 5rem 0;
   position: relative;
@@ -465,7 +448,6 @@ html[data-theme="light"] .info-card-icon-wrap svg {
   align-items: stretch;
 }
 
-/* Form Container Card */
 .form-card-container {
   padding: 3.2rem 2.8rem;
   border-radius: 28px;
@@ -496,7 +478,6 @@ html[data-theme="light"] .info-card-icon-wrap svg {
   line-height: 1.6;
 }
 
-/* Floating Label Groups */
 .luxury-form {
   display: flex;
   flex-direction: column;
@@ -560,7 +541,6 @@ html[data-theme="light"] .info-card-icon-wrap svg {
   padding: 0 0.3rem;
 }
 
-/* Floating Label Active & Focus State */
 .floating-input:focus ~ .floating-label,
 .floating-input:not(:placeholder-shown) ~ .floating-label,
 .floating-select:focus ~ .floating-label,
@@ -579,7 +559,6 @@ html[data-theme="light"] .info-card-icon-wrap svg {
   box-shadow: 0 0 0 4px rgba(244, 178, 35, 0.18);
 }
 
-/* Field Error Display */
 .field-error-msg {
   font-size: 0.76rem;
   color: #E53935;
@@ -596,7 +575,6 @@ html[data-theme="light"] .info-card-icon-wrap svg {
   display: block;
 }
 
-/* Radio Preferred Contact Options */
 .pref-contact-group {
   margin-top: 0.5rem;
 }
@@ -651,7 +629,6 @@ html[data-theme="light"] .info-card-icon-wrap svg {
   background: var(--primary);
 }
 
-/* Submit Button & Spinner */
 .form-submit-wrap {
   margin-top: 0.8rem;
 }
@@ -682,7 +659,6 @@ html[data-theme="light"] .info-card-icon-wrap svg {
   to { transform: rotate(360deg); }
 }
 
-/* Right Sidebar Cards */
 .form-sidebar-container {
   display: flex;
   flex-direction: column;
@@ -783,7 +759,6 @@ html[data-theme="dark"] .open-status-tag {
   color: var(--text-muted);
 }
 
-/* Concierge Quote Card */
 .concierge-quote-card {
   padding: 2rem;
   border-radius: 24px;
@@ -841,9 +816,6 @@ html[data-theme="dark"] .open-status-tag {
   color: var(--text-muted);
 }
 
-/* --------------------------------------------------------------------------
-   4. INTERACTIVE MAP SECTION
-   -------------------------------------------------------------------------- */
 .map-section {
   padding: 5rem 0;
   position: relative;
@@ -877,7 +849,6 @@ html[data-theme="dark"] .open-status-tag {
   transition: filter 0.3s ease;
 }
 
-/* Floating Info Card on Map */
 .map-overlay-card {
   position: absolute;
   top: 30px;
@@ -932,9 +903,6 @@ html[data-theme="dark"] .open-status-tag {
   justify-content: center;
 }
 
-/* --------------------------------------------------------------------------
-   5. FAQ ACCORDION SECTION
-   -------------------------------------------------------------------------- */
 .faq-section {
   padding: 5rem 0;
   position: relative;
@@ -960,9 +928,6 @@ html[data-theme="dark"] .open-status-tag {
   border-color: var(--primary);
 }
 
-/* --------------------------------------------------------------------------
-   5. FAQ ACCORDION SECTION (COMPACT TIGHT SIZING)
-   -------------------------------------------------------------------------- */
 .faq-section {
   padding: 2.2rem 0 2.5rem;
   position: relative;
@@ -1070,9 +1035,6 @@ html[data-theme="light"] .faq-icon-wrap svg {
   line-height: 1.55;
 }
 
-/* --------------------------------------------------------------------------
-   6. CURATED LUXURY SOCIAL STRIP
-   -------------------------------------------------------------------------- */
 .social-section {
   padding: 4.5rem 0;
   position: relative;
@@ -1139,9 +1101,6 @@ html[data-theme="light"] .faq-icon-wrap svg {
   border-radius: 50px;
 }
 
-/* --------------------------------------------------------------------------
-   7. GRAND CALL-TO-ACTION (CTA)
-   -------------------------------------------------------------------------- */
 .contact-cta-section {
   padding: 5rem 0 6rem;
   position: relative;
@@ -1227,9 +1186,6 @@ html[data-theme="light"] .faq-icon-wrap svg {
   box-shadow: 0 8px 24px light-dark(rgba(74, 46, 109, 0.25), rgba(255, 255, 255, 0.12));
 }
 
-/* --------------------------------------------------------------------------
-   8. TOAST NOTIFICATION MODAL
-   -------------------------------------------------------------------------- */
 .contact-toast {
   position: fixed;
   bottom: 30px;
@@ -1280,13 +1236,6 @@ html[data-theme="light"] .faq-icon-wrap svg {
   margin-left: auto;
 }
 
-/* ==========================================================================
-   RESPONSIVE MEDIA QUERIES FOR ALL BREAKPOINTS
-   ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   1. MOBILE (< 640px)
-   -------------------------------------------------------------------------- */
 @media (max-width: 639.98px) {
   .contact-hero-grid {
     grid-template-columns: 1fr;
@@ -1369,7 +1318,6 @@ html[data-theme="light"] .faq-icon-wrap svg {
   .form-card-container { padding: 2rem 1.4rem; border-radius: 20px; }
   .form-row { grid-template-columns: 1fr; gap: 1.2rem; }
 
-  /* Map Section Mobile Fix for iPhone SE, Samsung Galaxy & Small Screens */
   .map-card-wrapper {
     display: flex;
     flex-direction: column;
@@ -1441,7 +1389,6 @@ html[data-theme="light"] .faq-icon-wrap svg {
   .faq-icon-wrap svg { width: 14px; height: 14px; }
   .faq-body { padding: 0.2rem 1.1rem 0.8rem; font-size: 0.86rem; }
 
-  /* Social Cards Mobile Fix for iPhone SE & Samsung Galaxy Screen Overflow */
   .social-cards-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
@@ -1488,9 +1435,6 @@ html[data-theme="light"] .faq-icon-wrap svg {
   }
 }
 
-/* --------------------------------------------------------------------------
-   2. TABLET / IPAD MINI (640px - 1024px)
-   -------------------------------------------------------------------------- */
 @media (min-width: 640px) and (max-width: 1023.98px) {
   .contact-hero-grid {
     grid-template-columns: 48% 52%;
@@ -1573,9 +1517,6 @@ html[data-theme="light"] .faq-icon-wrap svg {
   .social-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
 }
 
-/* --------------------------------------------------------------------------
-   3. DESKTOP / NEST HUB (1024px - 1280px)
-   -------------------------------------------------------------------------- */
 @media (min-width: 1024px) and (max-width: 1279.98px) {
   .contact-hero-grid {
     grid-template-columns: 50% 50%;
@@ -1607,9 +1548,6 @@ html[data-theme="light"] .faq-icon-wrap svg {
   }
 }
 
-/* --------------------------------------------------------------------------
-   4. LARGE DESKTOP (> 1280px)
-   -------------------------------------------------------------------------- */
 @media (min-width: 1280px) {
   .contact-hero-grid {
     grid-template-columns: 52% 48%;

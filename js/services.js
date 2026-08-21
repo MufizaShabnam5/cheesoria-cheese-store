@@ -1,7 +1,4 @@
-/**
- * Cheesoria - Luxury Services Page Interactions
- * Handles FAQ accordion, Testimonial Carousel, and Featured Collections category filtering.
- */
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initServicesFaq();
@@ -9,9 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCollectionFilters();
 });
 
-/* ==========================================================================
-   1. FAQ Accordion Engine
-   ========================================================================== */
 function initServicesFaq() {
   const faqItems = document.querySelectorAll('.srv-faq-item');
   if (!faqItems.length) return;
@@ -22,7 +16,6 @@ function initServicesFaq() {
 
     if (!questionBtn || !answer) return;
 
-    // Open first item by default for luxury polish
     if (index === 0) {
       item.classList.add('active');
       answer.style.maxHeight = answer.scrollHeight + 'px';
@@ -32,7 +25,6 @@ function initServicesFaq() {
     questionBtn.addEventListener('click', () => {
       const isOpen = item.classList.contains('active');
 
-      // Close all other items
       faqItems.forEach(otherItem => {
         if (otherItem !== item) {
           otherItem.classList.remove('active');
@@ -43,7 +35,6 @@ function initServicesFaq() {
         }
       });
 
-      // Toggle current item
       if (isOpen) {
         item.classList.remove('active');
         answer.style.maxHeight = null;
@@ -57,9 +48,6 @@ function initServicesFaq() {
   });
 }
 
-/* ==========================================================================
-   2. Testimonial Glassmorphism Carousel
-   ========================================================================== */
 function initTestimonialCarousel() {
   const track = document.querySelector('.srv-testimonial-track');
   const slides = document.querySelectorAll('.srv-testimonial-card');
@@ -73,7 +61,6 @@ function initTestimonialCarousel() {
   let autoplayTimer = null;
   const slideCount = slides.length;
 
-  // Create dot indicators dynamically
   if (dotsContainer) {
     dotsContainer.innerHTML = '';
     slides.forEach((_, i) => {
@@ -86,13 +73,11 @@ function initTestimonialCarousel() {
   }
 
   function updateCarousel() {
-    // Check direction (LTR/RTL)
     const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
     const offset = currentIndex * 100;
     
     track.style.transform = isRtl ? `translateX(${offset}%)` : `translateX(-${offset}%)`;
 
-    // Update dots
     if (dotsContainer) {
       const dots = dotsContainer.querySelectorAll('.srv-dot');
       dots.forEach((dot, i) => {
@@ -100,7 +85,6 @@ function initTestimonialCarousel() {
       });
     }
 
-    // Update slides active class
     slides.forEach((slide, i) => {
       slide.classList.toggle('active-slide', i === currentIndex);
     });
@@ -123,7 +107,6 @@ function initTestimonialCarousel() {
   if (nextBtn) nextBtn.addEventListener('click', nextSlide);
   if (prevBtn) prevBtn.addEventListener('click', prevSlide);
 
-  // Autoplay functionality
   function startAutoplay() {
     stopAutoplay();
     autoplayTimer = setInterval(nextSlide, 5000);
@@ -138,14 +121,12 @@ function initTestimonialCarousel() {
     startAutoplay();
   }
 
-  // Pause on hover
   const carouselWrapper = document.querySelector('.srv-testimonials-carousel');
   if (carouselWrapper) {
     carouselWrapper.addEventListener('mouseenter', stopAutoplay);
     carouselWrapper.addEventListener('mouseleave', startAutoplay);
   }
 
-  // Touch Swipe support for Mobile
   let startX = 0;
   let endX = 0;
 
@@ -162,14 +143,10 @@ function initTestimonialCarousel() {
     }
   }, { passive: true });
 
-  // Initialize carousel active state
   updateCarousel();
   startAutoplay();
 }
 
-/* ==========================================================================
-   3. Featured Collections Category Tab Filter
-   ========================================================================== */
 function initCollectionFilters() {
   const tabs = document.querySelectorAll('.srv-col-tab');
   const cards = document.querySelectorAll('.srv-col-card');
@@ -180,11 +157,9 @@ function initCollectionFilters() {
     tab.addEventListener('click', () => {
       const category = tab.dataset.filter;
 
-      // Update active tab
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
 
-      // Filter cards
       cards.forEach(card => {
         const cardCategory = card.dataset.category;
         

@@ -4,9 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initHome1BuyButtons();
 });
 
-/* ==========================================================================
-   Signature Cheeses Filter Logic
-   ========================================================================== */
 function initSignatureFilter() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const sigCards = document.querySelectorAll('.sig-card');
@@ -15,7 +12,6 @@ function initSignatureFilter() {
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Set active class on clicked button
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
@@ -37,9 +33,6 @@ function initSignatureFilter() {
   });
 }
 
-/* ==========================================================================
-   Home1 Buy Button Interaction
-   ========================================================================== */
 function initHome1BuyButtons() {
   const buyBtns = document.querySelectorAll('.sig-buy-btn, .btn-buy-now');
   
@@ -48,7 +41,6 @@ function initHome1BuyButtons() {
       const name = btn.getAttribute('data-name') || 'Selected Cheese';
       const price = btn.getAttribute('data-price') ? `₹${btn.getAttribute('data-price')}` : '';
       
-      // Animated confirmation toast / alert
       const originalText = btn.textContent;
       btn.textContent = '✓ Added!';
       btn.style.backgroundColor = '#2e7d32';
@@ -65,9 +57,6 @@ function initHome1BuyButtons() {
   });
 }
 
-/* ==========================================================================
-   Artisanal Cheese Visual Gallery Filter Logic
-   ========================================================================== */
 function initGalleryFilter() {
   const filterBtns = document.querySelectorAll('.gallery-filter-btn');
   const galleryCards = document.querySelectorAll('.gallery-showcase-card');

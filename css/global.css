@@ -2,43 +2,35 @@
 
 :root {
   color-scheme: light dark;
-  /* Age & Infused Color Palette (Exactly two brand colors: Gold & Purple) */
   --primary: #F4B223;
   --secondary: #4A2E6D;
 
   --primary-hover: light-dark(#E59E10, #FFC63A);
   --secondary-hover: light-dark(#5D3A86, #6A4398);
 
-  /* Alternating Background Colors (Warm Ivory / Charcoal / Soft Cream / Dark Brown) */
   --bg-light-theme: light-dark(#FFF9EE, #171411);
   --bg-primary-theme: light-dark(#FFF5E6, #1E1A17);
   
-  /* Text, headings, and borders */
   --text-main: light-dark(#5F5A54, #D3CBC2);
   --heading-color: light-dark(var(--secondary), #FFF7E8);
   --text-muted: light-dark(rgba(95, 90, 84, 0.75), rgba(211, 203, 194, 0.75));
   --border-color: light-dark(#E8DFD1, #3B322A);
   
-  /* Glassmorphism/Card elements (Pure White / Espresso / Card Border) */
   --glass-bg: light-dark(#FFFFFF, #28211C);
   --glass-border: light-dark(#E8DFD1, #3B322A);
   --glass-blur: blur(12px);
 
-  /* Shadows */
   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.03);
   --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.12);
   
-  /* Smooth timings */
   --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: all 0.25s ease;
   
-  /* Dimensions */
   --navbar-height: 80px;
   --container-max-width: 1200px;
 }
 
-/* Base resets & layout */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -48,7 +40,6 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  /* Support custom scrollbar color & width */
   scrollbar-color: var(--primary) var(--bg-primary-theme);
   scrollbar-width: thin;
 }
@@ -63,12 +54,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* RTL Helpers */
 html[dir="rtl"] {
   direction: rtl;
 }
 
-/* Typography styling */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
@@ -88,7 +77,6 @@ img {
   display: block;
 }
 
-/* Global Grid Container */
 .container {
   width: 90%;
   max-width: var(--container-max-width);
@@ -96,7 +84,6 @@ img {
   position: relative;
 }
 
-/* Alternating Section Types */
 section {
   padding: 4rem 0;
   position: relative;
@@ -111,7 +98,6 @@ section {
   background-color: var(--bg-light-theme);
 }
 
-/* Luxury buttons and badges */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -131,7 +117,6 @@ section {
   white-space: nowrap;
 }
 
-/* Gold filled — matches mockup primary CTA */
 .btn-primary {
   background-color: var(--primary);
   color: #1a1200;
@@ -145,7 +130,6 @@ section {
   box-shadow: 0 6px 20px rgba(244, 178, 35, 0.35);
 }
 
-/* Purple outline — matches mockup "Learn More" secondary CTA */
 .btn-secondary {
   background-color: transparent;
   color: light-dark(var(--secondary), #ffffff);
@@ -160,7 +144,6 @@ section {
   box-shadow: 0 6px 20px light-dark(rgba(74,46,109,0.25), rgba(255,255,255,0.1));
 }
 
-/* Small button variant */
 .btn-sm {
   padding: 0.55rem 1.2rem;
   font-size: 0.82rem;
@@ -178,7 +161,6 @@ section {
   margin-bottom: 1.5rem;
 }
 
-/* Title Header Block */
 .section-header {
   text-align: center;
   max-width: 700px;
@@ -208,7 +190,6 @@ section {
   font-style: italic;
 }
 
-/* Glass Card styling */
 .glass-card {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
@@ -225,8 +206,6 @@ section {
   box-shadow: var(--shadow-lg);
 }
 
-/* Media Query System */
-/* MOBILE (< 640px) */
 @media (max-width: 639.98px) {
   section {
     padding: 4rem 0;
@@ -242,7 +221,6 @@ section {
   }
 }
 
-/* TABLET (640px - 1024px) */
 @media (min-width: 640px) and (max-width: 1023.98px) {
   section {
     padding: 5rem 0;
@@ -253,7 +231,6 @@ section {
   }
 }
 
-/* DESKTOP (1024px - 1280px) */
 @media (min-width: 1024px) and (max-width: 1279.98px) {
   section {
     padding: 7rem 0;
@@ -264,14 +241,12 @@ section {
   }
 }
 
-/* LARGE (> 1280px) */
 @media (min-width: 1280px) {
   .container {
     max-width: 1320px;
   }
 }
 
-/* Scroll reveal states */
 .scroll-reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -284,7 +259,6 @@ section {
   transform: translateY(0);
 }
 
-/* Instant visibility for hero sections on initial page render */
 .hero-section .scroll-reveal,
 .about-hero-section .scroll-reveal,
 .blog-hero-section .scroll-reveal,
@@ -298,7 +272,6 @@ section {
 .delay-3 { transition-delay: 0.45s; }
 .delay-4 { transition-delay: 0.6s; }
 
-/* Micro-animations */
 @keyframes float {
   0% { transform: translateY(0px) rotate(0deg); }
   50% { transform: translateY(-10px) rotate(2deg); }

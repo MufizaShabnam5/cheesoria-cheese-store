@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.scroll-reveal') || document.querySelector('.hero-section')) {
     initScrollAnimations();
   }
@@ -17,9 +17,6 @@
   }
 });
 
-/* ==========================================================================
-   3. Intersection Observer (Scroll Reveal and Parallax Elements)
-   ========================================================================== */
 function initScrollAnimations() {
   const revealElements = document.querySelectorAll('.scroll-reveal');
   
@@ -33,7 +30,6 @@ function initScrollAnimations() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('revealed');
-        // Unobserve after showing
         observer.unobserve(entry.target);
       }
     });
@@ -41,7 +37,6 @@ function initScrollAnimations() {
 
   revealElements.forEach(el => observer.observe(el));
 
-  // Parallax Hero Effect
   const heroSection = document.querySelector('.hero-section');
   if (heroSection) {
     window.addEventListener('scroll', () => {
@@ -54,9 +49,6 @@ function initScrollAnimations() {
   }
 }
 
-/* ==========================================================================
-   4. Interactive Build-Your-Own Charcuterie Board Builder
-   ========================================================================== */
 function initInteractiveBoardBuilder() {
   const builderSec = document.getElementById('builder');
   if (!builderSec) return;
@@ -79,17 +71,14 @@ function initInteractiveBoardBuilder() {
       const y = button.dataset.y;
 
       if (activeSelections.has(id)) {
-        // Deselect
         activeSelections.delete(id);
         button.classList.remove('active');
         const node = boardContainer.querySelector(`#node-${id}`);
         if (node) node.remove();
       } else {
-        // Select
         activeSelections.set(id, { name, price });
         button.classList.add('active');
         
-        // Add visual node to board
         const node = document.createElement('div');
         node.className = 'visual-node';
         node.id = `node-${id}`;
@@ -125,19 +114,14 @@ function initInteractiveBoardBuilder() {
     totalPriceEl.textContent = `$${total.toFixed(2)}`;
   }
 
-  // Pre-select some options for initial visual richness
   const initialIds = ['swiss', 'honey'];
   options.forEach(opt => {
     if (initialIds.includes(opt.dataset.id)) {
-      // Simulate click
       opt.dispatchEvent(new Event('click'));
     }
   });
 }
 
-/* ==========================================================================
-   5. FAQs Smooth Accordion Animations
-   ========================================================================== */
 function initFaqAccordions() {
   const faqItems = document.querySelectorAll('.faq-item');
   
@@ -150,7 +134,6 @@ function initFaqAccordions() {
     header.addEventListener('click', () => {
       const isOpen = item.classList.contains('active');
       
-      // Close other FAQs
       faqItems.forEach(otherItem => {
         if (otherItem !== item) {
           otherItem.classList.remove('active');

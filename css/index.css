@@ -1,10 +1,5 @@
-/* Section-Specific CSS Rules for index.html */
 
-/* ==========================================================================
-   1. Hero Section ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Mockup Parity Layout
-   ========================================================================== */
 
-/* Fade Up Entry Animation */
 @keyframes fadeUpIn {
   from {
     opacity: 0;
@@ -24,10 +19,8 @@
 .h-anim-2 { animation-delay: 0.3s; }
 .h-anim-3 { animation-delay: 0.5s; }
 
-/* Hero Section Base */
 .hero-section {
   position: relative;
-  /* Reduced height to ensure all contents fit cleanly within the viewport */
   min-height: 70vh;
   max-height: 520px;
   padding: 0;
@@ -37,7 +30,6 @@
   background-color: var(--bg-primary-theme);
 }
 
-/* Full-bleed 50/50 Grid Layout */
 .hero-grid {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -50,8 +42,6 @@
   z-index: 2;
 }
 
-/* Content Left column styling */
-/* Content Left column styling */
 .hero-left {
   display: flex;
   flex-direction: column;
@@ -63,7 +53,6 @@
   padding-bottom: 2rem;
   z-index: 5;
 }
-/* Cursive badge subtitle — clean text string, NO border, background or sparkles */
 .h-badge-text {
   font-family: 'Alex Brush', cursive;
   font-size: 1.85rem;
@@ -74,7 +63,6 @@
   display: inline-block;
 }
 
-/* Luxury serif heading */
 .h-heading {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.4rem, 4.2vw, 3.7rem);
@@ -96,7 +84,6 @@ html[data-theme="dark"] .h-heading .h-plum {
   color: var(--primary);
 }
 
-/* Description paragraph */
 .h-para {
   font-family: 'Playfair Display', serif;
   font-style: italic;
@@ -108,7 +95,6 @@ html[data-theme="dark"] .h-heading .h-plum {
   margin-bottom: 1.2rem;
 }
 
-/* CTA buttons container */
 .h-ctas {
   display: flex;
   align-items: center;
@@ -117,7 +103,6 @@ html[data-theme="dark"] .h-heading .h-plum {
   width: 100%;
 }
 
-/* Customized buttons matching global theme */
 .h-btn {
   display: inline-flex;
   align-items: center;
@@ -158,7 +143,6 @@ html[data-theme="dark"] .h-heading .h-plum {
   box-shadow: 0 8px 24px light-dark(rgba(74,46,109,0.18), rgba(255,255,255,0.12));
 }
 
-/* Button arrow animation */
 .h-btn-arrow {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -166,7 +150,6 @@ html[data-theme="dark"] .h-heading .h-plum {
   transform: translateX(4px);
 }
 
-/* Features strip container - horizontal layout */
 .h-features {
   display: flex;
   align-items: center;
@@ -240,17 +223,15 @@ html[data-theme="dark"] .h-heading .h-plum {
   opacity: 0.7;
 }
 
-/* RIGHT COLUMN - Showcase container is transparent to show entire image naturally */
 .hero-right {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 5;
-  padding-right: 4rem; /* Shift images away from right edge */
+  padding-right: 4rem; 
 }
 
-/* Premium Cheese Gallery Layout */
 .cheese-gallery-container {
   position: relative;
   width: 100%;
@@ -259,7 +240,7 @@ html[data-theme="dark"] .h-heading .h-plum {
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translateX(-20px); /* Nudge left to avoid overflow */
+  transform: translateX(-20px); 
 }
 
 .cheese-gallery-card {
@@ -298,7 +279,6 @@ html[data-theme="dark"] .h-heading .h-plum {
   transform: rotate(5deg);
 }
 
-/* Glassmorphic luxury badge on cards */
 .gallery-card-badge {
   position: absolute;
   bottom: 15px;
@@ -323,7 +303,6 @@ html[data-theme="dark"] .gallery-card-badge {
   border-color: rgba(244, 178, 35, 0.25);
 }
 
-/* Interactive Hover effects */
 .cheese-gallery-container:hover .card-primary {
   transform: rotate(-1deg) translateY(-8px) translateX(-5px);
   z-index: 4;
@@ -339,7 +318,6 @@ html[data-theme="dark"] .gallery-card-badge {
   box-shadow: 0 25px 60px rgba(0,0,0,0.18), 0 0 20px rgba(244, 178, 35, 0.15);
 }
 
-/* Glassmorphic backlight glow behind the scene */
 .cheese-3d-glow {
   position: absolute;
   width: 320px;
@@ -361,26 +339,6 @@ html[data-theme="dark"] .cheese-3d-glow {
   0% { transform: scale(0.9) translate(-5%, -5%); opacity: 0.8; }
   100% { transform: scale(1.1) translate(5%, 5%); opacity: 1.2; }
 }
-
-/* ==========================================================================
-   Hero ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Responsive (all mediaqueries)
-   Hero Ã¢â‚¬â€ Responsive (all mediaqueries)
-   ========================================================================== */
-
-/* Large desktop */
-
-/* Medium/Standard Desktop */
-
-/* Tablet landscape */
-
-/* Tablet portrait Ã¢â‚¬â€ Switch to 1 column layout */
-
-/* Mobile landscape/portrait */
-
-/* Small mobile */
-/* ==========================================================================
-   2. Our Collection & Product Grid
-   ========================================================================== */
 
 .collection-header-row {
   display: flex;
@@ -561,13 +519,12 @@ html[data-theme="dark"] .cheese-3d-glow {
 .product-price {
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--primary); /* Gold in both modes */
+  color: var(--primary); 
   font-family: 'Playfair Display', serif;
   flex-shrink: 0;
   white-space: nowrap;
 }
 
-/* Buy Now Button */
 .btn-buy-now {
   padding: 0.5rem 1.25rem;
   border-radius: 50px;
@@ -595,9 +552,6 @@ html[data-theme="dark"] .btn-buy-now {
   box-shadow: 0 4px 12px rgba(244,178,35,0.3);
 }
 
-/* ==========================================================================
-   3. Special Offer Banner
-   ========================================================================== */
 .offer-banner-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -622,7 +576,6 @@ html[data-theme="dark"] .btn-buy-now {
   padding: 3rem;
 }
 
-/* RTL layout shifts for offer banner */
 html[dir="rtl"] .offer-banner-grid {
   direction: rtl;
 }
@@ -651,10 +604,6 @@ html[dir="rtl"] .offer-banner-grid {
   margin: 0 auto;
 }
 
-
-
-
-
 .offer-title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.4rem, 4.2vw, 3.7rem);
@@ -682,7 +631,6 @@ html[dir="rtl"] .offer-banner-grid {
   justify-content: center;
 }
 
-/* Custom Offer Action Button (Purple in Light Mode, Gold in Dark Mode) */
 .btn-offer {
   background-color: light-dark(var(--secondary), var(--primary));
   color: light-dark(#ffffff, #000000);
@@ -696,13 +644,6 @@ html[dir="rtl"] .offer-banner-grid {
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
-
-/* Responsive grid layouts */
-
-
-/* ==========================================================================
-   4. Premium Cheese Experience
-   ========================================================================== */
 
 .premium-title {
   font-family: 'Playfair Display', serif;
@@ -791,9 +732,6 @@ html[dir="rtl"] .offer-banner-grid {
   line-height: 1.6;
 }
 
-/* ==========================================================================
-   5. Monthly Curated Club Subscription
-   ========================================================================== */
 .club-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -933,7 +871,6 @@ html[dir="rtl"] .offer-banner-grid {
   border-radius: 4px;
 }
 
-/* Pricing/Tiers - Editorial Borderless Horizontal Rows */
 .club-pricing {
   display: flex;
   flex-direction: column;
@@ -1100,18 +1037,9 @@ html[dir="rtl"] .row-action-box {
   color: var(--text-muted);
 }
 
-/* Subscribe button pill shape matching Learn More button */
 .pricing-row .btn {
   border-radius: 50px;
 }
-
-
-/* ==========================================================================
-   6. Curated Pairing Guide (Wine & Cheese Masterclass)
-   ========================================================================== */
-
-
-
 
 .pairings-title {
   font-family: 'Playfair Display', serif;
@@ -1186,11 +1114,6 @@ html[dir="rtl"] .row-action-box {
   color: var(--primary);
 }
 
-/* ==========================================================================
-   Responsive Adaptations for New Layouts
-   ========================================================================== */
-
-
 .collection-subtitle, .offer-subtitle, .premium-subtitle, .club-tag, .pairings-subtitle {
   font-family: 'Alex Brush', cursive;
   font-size: 1.85rem;
@@ -1205,7 +1128,6 @@ html[dir="rtl"] .row-action-box {
   text-transform: none;
 }
 
-/* Inline styles extracted from index.html */
 .premium-bg-section { background-color: var(--bg-primary-theme); background-image: none; position: relative; }
 .premium-overlay { display: none; }
 .premium-container { position: relative; z-index: 5; }
@@ -1214,9 +1136,6 @@ html[dir="rtl"] .row-action-box {
 .pairings-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: light-dark(rgba(255,245,230,0.94), rgba(30,26,23,0.94)); z-index:1; }
 .pairings-container { position: relative; z-index: 5; }
 
-
-
-/* New Buy Now Button */
 .btn-buy {
   background-color: var(--primary);
   color: #1a1200;
@@ -1236,9 +1155,6 @@ html[dir="rtl"] .row-action-box {
   box-shadow: 0 4px 12px rgba(244,178,35,0.3);
 }
 
-/* ==========================================================================
-   Premium Testimonial Section
-   ========================================================================== */
 .testimonial-section {
   padding: 6rem 0;
   text-align: center;
@@ -1368,14 +1284,6 @@ html[dir="rtl"] .row-action-box {
   letter-spacing: 1px;
 }
 
-/* Responsive Testimonials */
-
-
-/* ==========================================================================
-   Responsive Adaptations (Consolidated)
-   ========================================================================== */
-
-/* Mobile: < 640px */
 @media (max-width: 639.98px) {
   .hero-section { min-height: auto; max-height: none; padding-bottom: 2rem; }
   .hero-grid { grid-template-columns: 1fr; }
@@ -1426,7 +1334,6 @@ html[dir="rtl"] .row-action-box {
   .instagram-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
 
-/* Tablet: 640px - 1024px */
 @media (min-width: 640px) and (max-width: 1023.98px) {
   .hero-section { min-height: auto; max-height: none; padding-bottom: 3rem; }
   .hero-grid { grid-template-columns: 1fr; }
@@ -1468,7 +1375,6 @@ html[dir="rtl"] .row-action-box {
   .instagram-grid { grid-template-columns: repeat(3, 1fr) !important; }
 }
 
-/* Desktop: 1024px - 1280px */
 @media (min-width: 1024px) and (max-width: 1279.98px) {
   .hero-section { min-height: auto; max-height: none; padding-bottom: 2rem; }
   .hero-grid { grid-template-columns: 55% 45%; }
@@ -1486,7 +1392,6 @@ html[dir="rtl"] .row-action-box {
   .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
   .blog-grid { grid-template-columns: repeat(3, 1fr) !important; }
   
-  /* Laptop Screen Product Card Alignment Fix */
   .product-grid { align-items: stretch; }
   .product-card { display: flex; flex-direction: column; height: 100%; }
   .product-info { display: flex; flex-direction: column; flex-grow: 1; }
@@ -1495,7 +1400,6 @@ html[dir="rtl"] .row-action-box {
   .product-footer { margin-top: auto; gap: 1rem; }
   .btn-buy-now { padding: 0.6rem 1.2rem; font-size: 0.85rem; }
   
-  /* Club Section: Desktop (1024px - 1280px) */
   .club-grid { grid-template-columns: 1fr 1.1fr; gap: 2.5rem; align-items: stretch !important; }
   .club-showcase { align-items: flex-start; text-align: left; gap: 1.2rem; height: 100% !important; justify-content: space-between; }
   .club-pricing { display: flex; flex-direction: column; height: 100% !important; justify-content: space-between; }
@@ -1503,7 +1407,6 @@ html[dir="rtl"] .row-action-box {
   .crate-perks { margin-top: 1.2rem !important; padding: 1.5rem 1.8rem; border-radius: 20px; flex-grow: 1 !important; }
 }
 
-/* Large: > 1280px */
 @media (min-width: 1280px) {
   .product-grid { align-items: stretch; }
   .product-card { display: flex; flex-direction: column; height: 100%; }
@@ -1519,9 +1422,7 @@ html[dir="rtl"] .row-action-box {
   .crate-perks { margin-top: 1.2rem !important; padding: 1.5rem 1.8rem; border-radius: 20px; flex-grow: 1 !important; }
 }
 
-/* Nest Hub & Nest Hub Max Specific Display Optimization (1024px Viewport) */
 @media (min-width: 1020px) and (max-width: 1028px), (width: 1024px) and (height: 600px) {
-  /* VIP Crate Perks 3-Line Aligned Fix on Nest Hub */
   .vip-perk-item span {
     font-size: 0.78rem !important;
     line-height: 1.35 !important;
@@ -1539,14 +1440,12 @@ html[dir="rtl"] .row-action-box {
     margin-bottom: 0.15rem !important;
   }
 
-  /* Cold-Chain Shipping 1-Line Keep Fix on Nest Hub */
   .vip-trust-strip span,
   .vip-perk-item strong,
   .perks-list li strong {
     white-space: nowrap !important;
   }
 
-  /* Product Rating Count 1-Line Keep Fix on Nest Hub */
   .rating-count {
     white-space: nowrap !important;
     font-size: 0.78rem !important;
@@ -1560,7 +1459,6 @@ html[dir="rtl"] .row-action-box {
     letter-spacing: 0.05em !important;
   }
 
-  /* Product Name 2-Line Alignment Fix on Nest Hub */
   .product-name {
     font-size: 1.15rem !important;
     min-height: 2.8rem !important;
@@ -1569,7 +1467,6 @@ html[dir="rtl"] .row-action-box {
     align-items: center !important;
   }
 
-  /* Crafting Luxury Cheese Section - 3 Cards Alignment & 1-Line Headings */
   .premium-grid {
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 1.2rem !important;
@@ -1605,7 +1502,6 @@ html[dir="rtl"] .row-action-box {
     line-height: 1.45 !important;
   }
 
-  /* Club Section */
   .club-grid {
     grid-template-columns: 1fr 1.05fr !important;
     gap: 1.8rem !important;
@@ -1647,7 +1543,6 @@ html[dir="rtl"] .row-action-box {
     gap: 0.5rem !important;
   }
 
-  /* Compact right pricing column so it matches left side height on Nest Hub */
   .club-pricing {
     gap: 0.8rem !important;
   }
@@ -1687,9 +1582,7 @@ html[dir="rtl"] .row-action-box {
   }
 }
 
-/* Nest Hub Max Specific Display Optimization (1280px x 800px Viewport) */
 @media (min-width: 1275px) and (max-width: 1285px), (width: 1280px) and (height: 800px) {
-  /* Words of Excellence (Testimonials) Section - 5-Line Paragraph Alignment across all 4 Cards */
   .testimonial-grid {
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 1.5rem !important;
@@ -1705,7 +1598,7 @@ html[dir="rtl"] .row-action-box {
   .testimonial-text {
     font-size: 1.02rem !important;
     line-height: 1.7 !important;
-    min-height: 9.2em !important; /* Ensures exact 5-line paragraph height alignment across all 4 cards including Sarah J. */
+    min-height: 9.2em !important; 
     margin-bottom: 1.5rem !important;
   }
   .testimonial-author {
@@ -1713,9 +1606,6 @@ html[dir="rtl"] .row-action-box {
   }
 }
 
-/* ==========================================================================
-   HERO RTL OVERFLOW FIX (index.html & home1.html)
-   ========================================================================== */
 html[dir="rtl"] .hero-section {
   overflow: hidden;
   max-width: 100vw;

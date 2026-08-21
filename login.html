@@ -6,32 +6,26 @@
   <title>Sign In — Cheesoria Artisanal Cheese Store</title>
   <meta name="description" content="Sign in to your Cheesoria account to access your artisanal cheese orders, store settings, and member privileges.">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/auth.css">
 </head>
 <body class="auth-body">
 
-  <!-- Ambient Luxury Glow Orbs (Background Ambiance) -->
   <div class="auth-ambient-glow">
     <div class="glow-orb glow-orb-1"></div>
     <div class="glow-orb glow-orb-2"></div>
     <div class="glow-orb glow-orb-3"></div>
   </div>
 
-  <!-- Main Centered Authentication Container -->
   <div class="auth-container">
     <main class="auth-card glass-card">
 
-      <!-- Top-Right Controls: Dark Mode Toggle & LTR/RTL Toggle -->
       <div class="auth-top-controls">
         <button id="auth-theme-toggle" class="auth-control-btn" title="Toggle Light / Dark Theme" type="button">
           <span class="theme-icon-sun">☀️</span>
@@ -42,7 +36,6 @@
         </button>
       </div>
 
-      <!-- Card Header with Centered Cheesoria Logo -->
       <div class="auth-header">
         <a href="index.html" class="auth-logo-link" title="Cheesoria Home">
           <span class="logo-emoji">🧀</span>
@@ -54,13 +47,10 @@
         <h1 class="auth-title">Welcome Back</h1>
       </div>
 
-      <!-- Interactive Alert Message Box -->
       <div id="auth-alert-box" class="auth-alert hidden" role="alert"></div>
 
-      <!-- Vertically Stacked Authentication Form -->
       <form id="login-form" class="auth-form" action="#" method="POST" novalidate>
 
-        <!-- Field 1: Email Address / Username -->
         <div class="form-field">
           <label for="email" class="form-label">
             <span>Email Address</span>
@@ -81,7 +71,6 @@
           </div>
         </div>
 
-        <!-- Field 2: Password with Eye Toggle -->
         <div class="form-field">
           <label for="password" class="form-label">
             <span>Password</span>
@@ -113,7 +102,6 @@
           </div>
         </div>
 
-        <!-- Same Row Options: Remember Me & Forgot Password -->
         <div class="form-options-row">
           <label class="checkbox-label">
             <input type="checkbox" class="custom-checkbox" name="remember" checked>
@@ -122,14 +110,12 @@
           <a href="#" class="forgot-pass-link" title="Recover forgotten password">Forgot Password?</a>
         </div>
 
-        <!-- Full-Width CTA Submit Button (Matches Input Width) -->
         <button type="submit" class="auth-submit-btn">
           <span>Sign In to Cheesoria</span>
           <svg class="btn-arrow-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </button>
       </form>
 
-      <!-- Social Login Buttons Section (Positioned Below Sign In Button) -->
       <div class="social-divider">
         <span>or continue with social account</span>
       </div>
@@ -157,7 +143,6 @@
         </button>
       </div>
 
-      <!-- Card Footer: Switch to Sign Up Page -->
       <div class="auth-footer">
         <span>Don't have an account?</span>
         <a href="signup.html" class="auth-switch-link" title="Create a new Cheesoria account">Sign Up</a>
@@ -166,7 +151,6 @@
     </main>
   </div>
 
-  <!-- Authentication JavaScript -->
   <script src="js/auth.js"></script>
 </body>
 </html>

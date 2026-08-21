@@ -1,10 +1,4 @@
-/* ==========================================================================
-   Cheesoria Artisanal Boutique - Premium About Page Stylesheet
-   ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   0. Global Page Layout & Typography Utilities
-   -------------------------------------------------------------------------- */
 .about-page-body {
   background-color: var(--bg-light-theme);
   color: var(--text-main);
@@ -16,7 +10,6 @@
   width: 100%;
 }
 
-/* Unified Cursive Script Taglines/Badges Matching Hero Section */
 .about-page-body .script-badge,
 .about-page-body .section-header .badge {
   font-family: 'Alex Brush', cursive !important;
@@ -39,15 +32,10 @@
   display: inline-block;
 }
 
-/* Heading underline removed per user request */
 .highlight-gold::after {
   display: none !important;
 }
 
-
-/* ==========================================================================
-   SECTION 1: HERO — Split Layout with Slanted Showcase & Floating Badges
-   ========================================================================== */
 .about-hero-section {
   position: relative;
   padding: 0 !important;
@@ -76,7 +64,6 @@
   z-index: 5;
 }
 
-/* Unified Headings Matching Hero Section */
 .about-page-body .section-header {
   margin-bottom: 1.2rem !important;
   text-align: center;
@@ -119,7 +106,6 @@
   margin-bottom: 1.1rem;
 }
 
-/* Unified Subheadings/Subtexts Matching Hero Section */
 .about-page-body .section-header p,
 .about-page-body .about-hero-narrative,
 .about-page-body .cta-banner-desc,
@@ -133,7 +119,6 @@
   line-height: 1.6;
 }
 
-/* Button shapes on About page matching Navbar Login Button shape (border-radius: 50px) */
 .about-page-body .btn,
 .about-page-body .btn-primary,
 .about-page-body .btn-secondary,
@@ -151,7 +136,6 @@
   gap: 0.5em !important;
 }
 
-/* Compact Luxury Hero Stats Row */
 .hero-stats-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -196,7 +180,6 @@
   white-space: nowrap;
 }
 
-/* CTA Buttons */
 .hero-cta-group {
   display: flex !important;
   flex-direction: row !important;
@@ -225,7 +208,6 @@
   max-width: 100%;
 }
 
-/* Hero Right: Slanted Media Showcase (Matching Blog & Contact Page Slant) */
 .about-hero-right {
   position: relative;
   height: 100%;
@@ -283,7 +265,6 @@ html[dir="rtl"] .slanted-image-wrapper,
   pointer-events: none;
 }
 
-/* Floating Glass Badges */
 .badge-top-right {
   position: absolute;
   top: 24px;
@@ -392,10 +373,6 @@ html[dir="rtl"] .slanted-image-wrapper,
   }
 }
 
-
-/* ==========================================================================
-   SECTION 2: OUR STORY — Timeline of Cheesoria's Journey
-   ========================================================================== */
 .our-story-section {
   padding: 3rem 0;
   position: relative;
@@ -409,7 +386,6 @@ html[dir="rtl"] .slanted-image-wrapper,
   margin: 1.8rem auto 0;
 }
 
-/* Central vertical connecting line */
 .timeline-line {
   position: absolute;
   top: 0;
@@ -512,7 +488,6 @@ html[dir="rtl"] .slanted-image-wrapper,
   line-height: 1.6;
 }
 
-/* RTL Support for Our Heritage & Journey Timeline Section */
 html[dir="rtl"] .story-timeline-wrapper {
   direction: rtl;
 }
@@ -543,13 +518,6 @@ html[dir="rtl"] .timeline-card {
   text-align: right;
 }
 
-
-/* ==========================================================================
-   SECTION 3: OUR CRAFTSMANSHIP — 4-Step Process Grid
-   ========================================================================== */
-/* ==========================================================================
-   SECTION 3: OUR CRAFTSMANSHIP — The Art & Science 4-Step Interactive Pipeline
-   ========================================================================== */
 .craftsmanship-section {
   padding: 3rem 0;
   position: relative;
@@ -564,7 +532,6 @@ html[dir="rtl"] .timeline-card {
   width: 100%;
 }
 
-/* Glowing Connecting Protocol Flow Line */
 .craft-pipeline-line {
   position: absolute;
   top: 100px;
@@ -591,7 +558,6 @@ html[dir="rtl"] .timeline-card {
   z-index: 2;
 }
 
-/* Equal Height Flush Cards Alignment */
 .craft-step-1, .craft-step-2, .craft-step-3, .craft-step-4 {
   transform: none !important;
   margin: 0 !important;
@@ -652,7 +618,6 @@ html[dir="rtl"] .timeline-card {
   pointer-events: none;
 }
 
-/* Floating Step Badge */
 .craft-step-badge {
   position: absolute;
   top: 12px;
@@ -723,7 +688,6 @@ html[dir="rtl"] .craft-step-badge {
   stroke: #1A1200 !important;
 }
 
-/* 1-Line Heading Guarantee Across All Cards */
 .craft-title {
   font-size: 1.02rem;
   font-weight: 700;
@@ -736,7 +700,6 @@ html[dir="rtl"] .craft-step-badge {
   width: 100%;
 }
 
-/* Identical 3-Line Paragraph Guarantee Across All Cards */
 .craft-desc {
   font-size: 0.86rem;
   line-height: 1.6;
@@ -750,7 +713,6 @@ html[dir="rtl"] .craft-step-badge {
   overflow: hidden;
 }
 
-/* 1-Line Structural Metadata Label Guarantee */
 .craft-meta-tag {
   font-size: 0.75rem;
   font-weight: 700;
@@ -770,10 +732,6 @@ html[dir="rtl"] .craft-step-badge {
   text-overflow: ellipsis;
 }
 
-
-/* ==========================================================================
-   SECTION 4: WHY CHOOSE CHEESORIA — 6 Feature Cards Grid
-   ========================================================================== */
 .why-cheesoria-section {
   padding: 3rem 0;
   position: relative;
@@ -852,10 +810,6 @@ html[dir="rtl"] .craft-step-badge {
   width: 100%;
 }
 
-
-/* ==========================================================================
-   SECTION 5: MEET OUR CHEESEMAKERS — Artisan Profile Cards
-   ========================================================================== */
 .cheesemakers-section {
   padding: 3rem 0;
   position: relative;
@@ -971,10 +925,6 @@ html[dir="rtl"] .craft-step-badge {
   margin-top: auto;
 }
 
-
-/* ==========================================================================
-   SECTION 6: OUR PROMISE & CTA — Values Pillars & Glass Banner
-   ========================================================================== */
 .promise-cta-section {
   padding: 2.5rem 0;
   position: relative;
@@ -983,7 +933,6 @@ html[dir="rtl"] .craft-step-badge {
   border-bottom: 1px solid var(--border-color);
 }
 
-/* CTA Glass Banner */
 .cta-glass-banner {
   padding: 2.5rem 2rem;
   border-radius: 24px;
@@ -1025,14 +974,6 @@ html[dir="rtl"] .craft-step-badge {
   border-radius: 50px !important;
 }
 
-
-/* ==========================================================================
-   RESPONSIVE BREAKPOINTS ACROSS ALL 4 MEDIA QUERIES
-   ========================================================================== */
-
-
-
-/* 1. Mobile (< 640px, e.g. Samsung Galaxy S8 360px) */
 @media (max-width: 639.98px) {
   .about-hero-section {
     min-height: auto !important;
@@ -1202,7 +1143,6 @@ html[dir="rtl"] .craft-step-badge {
     border-radius: 10px !important;
   }
 
-  /* Timeline Mobile Stacking */
   .story-timeline-wrapper {
     margin-top: 2rem;
   }
@@ -1222,7 +1162,6 @@ html[dir="rtl"] .craft-step-badge {
     left: 10px !important;
   }
 
-  /* RTL Mobile Timeline Overrides */
   html[dir="rtl"] .timeline-line {
     right: 20px !important;
     left: auto !important;
@@ -1253,7 +1192,6 @@ html[dir="rtl"] .craft-step-badge {
     height: 150px;
   }
 
-  /* Grids Mobile Stack */
   .craft-pipeline-line {
     display: none;
   }
@@ -1290,8 +1228,6 @@ html[dir="rtl"] .craft-step-badge {
   }
 }
 
-
-/* 2. Tablet & iPad Mini (640px - 1024px) */
 @media (min-width: 640px) and (max-width: 1023.98px) {
   .about-hero-section {
     min-height: auto !important;
@@ -1439,7 +1375,6 @@ html[dir="rtl"] .craft-step-badge {
     border-radius: 12px !important;
   }
 
-  /* RTL Tablet Timeline Overrides */
   html[dir="rtl"] .timeline-line {
     right: 50% !important;
     left: auto !important;
@@ -1468,7 +1403,6 @@ html[dir="rtl"] .craft-step-badge {
     left: auto !important;
   }
 
-  /* Grids Tablet 2-Column */
   .craft-pipeline-line {
     display: none;
   }
@@ -1498,8 +1432,6 @@ html[dir="rtl"] .craft-step-badge {
   }
 }
 
-
-/* 3. Desktop (1024px - 1280px) */
 @media (min-width: 1024px) and (max-width: 1279.98px) {
   .about-hero-section {
     min-height: auto !important;
@@ -1587,7 +1519,6 @@ html[dir="rtl"] .craft-step-badge {
     height: 14px;
   }
 
-  /* RTL Desktop Timeline Overrides */
   html[dir="rtl"] .timeline-line {
     right: 50% !important;
     left: auto !important;
@@ -1627,9 +1558,7 @@ html[dir="rtl"] .craft-step-badge {
   }
 }
 
-/* Nest Hub Specific Display Optimization (1024px Viewport) */
 @media (min-width: 1020px) and (max-width: 1028px), (width: 1024px) and (height: 600px) {
-  /* Unmatched Distinction Section - Sommelier Taste Profiles Title 2 Lines */
   .features-grid .feature-card:nth-child(5) .feature-title {
     max-width: 170px !important;
     margin-left: auto !important;
@@ -1638,8 +1567,6 @@ html[dir="rtl"] .craft-step-badge {
   }
 }
 
-
-/* 4. Large Desktop (> 1280px) */
 @media (min-width: 1280px) {
   .about-hero-section {
     min-height: auto !important;
@@ -1687,7 +1614,6 @@ html[dir="rtl"] .craft-step-badge {
     border-radius: 50px !important;
   }
 
-  /* RTL Large Desktop Timeline Overrides */
   html[dir="rtl"] .timeline-line {
     right: 50% !important;
     left: auto !important;

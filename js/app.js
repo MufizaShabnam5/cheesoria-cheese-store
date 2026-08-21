@@ -1,12 +1,9 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  // Initialize scroll reveal animations for all pages
   initScrollAnimations();
 
-  // Load navbar and footer templates
   const navbarPromise = loadComponent('navbar', 'components/navbar.html');
   const footerPromise = loadComponent('footer', 'components/footer.html');
 
-  // Wait for navbar to load and initialize navbar-dependent systems
   const navbarLoaded = await navbarPromise;
   if (navbarLoaded) {
     initNavbarEvents();
@@ -19,9 +16,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   await footerPromise;
 });
 
-/* ==========================================================================
-   0. Component Loader Helper, Navbar Event Binding & Active Link Detector
-   ========================================================================== */
 async function loadComponent(elementId, filepath) {
   const element = document.getElementById(elementId);
   if (!element) return false;
@@ -45,7 +39,6 @@ function highlightActiveNavLink() {
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
 
-  // Clear previous active classes
   navbar.querySelectorAll('.active').forEach(el => el.classList.remove('active'));
 
   const allLinks = navbar.querySelectorAll('a[href]');
@@ -57,7 +50,6 @@ function highlightActiveNavLink() {
     if (linkFile && linkFile === pageName) {
       link.classList.add('active');
 
-      // Highlight parent dropdown if inside a dropdown menu
       const parentDropdown = link.closest('.menu-item.dropdown');
       if (parentDropdown) {
         const toggleLink = parentDropdown.querySelector('.dropdown-toggle');
@@ -66,7 +58,6 @@ function highlightActiveNavLink() {
     }
   });
 
-  // Highlight Login button on auth pages
   if (pageName === 'login.html' || pageName === 'signup.html') {
     const loginBtn = navbar.querySelector('#login-btn');
     const drawerLoginBtn = navbar.querySelector('#drawer-login-btn');
@@ -96,7 +87,6 @@ function initNavbarEvents() {
   closeBtn.addEventListener('click', toggleDrawer);
   overlay.addEventListener('click', toggleDrawer);
 
-  // Setup links in drawer to close drawer when clicked
   navbar.querySelectorAll('.drawer-link').forEach(link => {
     link.addEventListener('click', () => {
       if (drawer.classList.contains('active')) {
@@ -106,23 +96,16 @@ function initNavbarEvents() {
   });
 }
 
-
-/* ==========================================================================
-   1. Theme Engine (Light / Dark Mode with light-dark() CSS variables)
-   ========================================================================== */
 function initThemeEngine() {
   const themeToggle = document.getElementById('theme-toggle');
   if (!themeToggle) return;
 
-  // Retrieve theme preference or default to system
   const savedTheme = localStorage.getItem('cheesso-theme');
   const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
 
-  // Apply initial state
   setTheme(initialTheme);
 
-  // Bind toggle click
   themeToggle.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -132,21 +115,16 @@ function initThemeEngine() {
 
 function setTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
-  document.documentElement.style.colorScheme = theme; // Force light-dark() evaluation
+  document.documentElement.style.colorScheme = theme; 
   localStorage.setItem('cheesso-theme', theme);
 
-  // Dispatch custom event if navbar or components need to react
   document.dispatchEvent(new CustomEvent('themechanged', { detail: { theme } }));
 }
 
-/* ==========================================================================
-   2. RTL Engine (Right to Left layout toggling)
-   ========================================================================== */
 function initRtlEngine() {
   const rtlToggle = document.getElementById('rtl-toggle');
   if (!rtlToggle) return;
 
-  // Check saved setting
   const savedRtl = localStorage.getItem('cheesso-rtl') === 'true';
   setRtl(savedRtl);
 
@@ -169,12 +147,7 @@ function setRtl(enable) {
   }
 }
 
-
-/* ==========================================================================
-   6. Mobile Drawer Synced Button actions
-   ========================================================================== */
 function initMobileDrawerActions() {
-  // Sync the mobile drawer login click to normal login button behavior
   const drawerLoginBtn = document.getElementById('drawer-login-btn');
   const mainLoginBtn = document.getElementById('login-btn');
   
@@ -185,9 +158,6 @@ function initMobileDrawerActions() {
   }
 }
 
-/* ==========================================================================
-   7. Global Scroll Reveal & Hero Section Immediate Visibility
-   ========================================================================== */
 function initScrollAnimations() {
   const revealElements = document.querySelectorAll('.scroll-reveal');
   if (!revealElements.length) return;
@@ -209,7 +179,6 @@ function initScrollAnimations() {
 
   revealElements.forEach(el => {
     const rect = el.getBoundingClientRect();
-    // If element is already in initial viewport or hero section, reveal immediately
     if (rect.top < window.innerHeight || el.closest('.hero-section, .about-hero-section, .blog-hero-section, .contact-hero-section')) {
       el.classList.add('revealed');
     } else {

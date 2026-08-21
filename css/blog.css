@@ -1,8 +1,4 @@
-/* ==========================================================================
-   CHEESORIA LUXURY EDITORIAL BLOG STYLESHEET (css/blog.css)
-   ========================================================================== */
 
-/* 1. GLOBAL LAYOUT & PAGE WRAPPER */
 .blog-body {
   background-color: var(--bg-light-theme);
   color: var(--text-main);
@@ -12,8 +8,6 @@
 }
 
 .blog-page-main {
-/* Compact clearance right under sticky navbar */
- /* padding-bottom: 3rem;*/
 }
 
 .blog-container {
@@ -25,7 +19,6 @@
   box-sizing: border-box;
 }
 
-/* Glassmorphism Common Utilities */
 .glass-card {
   background: var(--glass-bg);
   border: 1px solid var(--border-color);
@@ -41,10 +34,6 @@
   box-shadow: var(--shadow-lg);
 }
 
-
-/* ==========================================================================
-   2. SECTION 1: BLOG HERO BANNER & SEARCH/FILTER BAR (NO DEAD SPACE & SLANTED)
-   ========================================================================== */
 .blog-hero-section {
   padding: 0;
   margin-top: 0;
@@ -137,14 +126,13 @@ html[dir="dark"] .blog-hero-title .h-gold {
   flex-wrap: wrap;
 }
 
-/* Home 1 Styled Hero Action Buttons (border-radius: 50px) */
 .btn-primary,
 .btn-hero-explore {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
   padding: 0.8rem 1.6rem;
-  border-radius: 50px; /* Same signature pill shape as Home 1 page */
+  border-radius: 50px; 
   background: linear-gradient(135deg, var(--primary) 0%, #D49B1D 100%);
   color: #1A1200;
   font-family: 'Inter', sans-serif;
@@ -180,7 +168,7 @@ html[dir="dark"] .blog-hero-title .h-gold {
   align-items: center;
   gap: 0.45rem;
   padding: 0.8rem 1.4rem;
-  border-radius: 50px; /* Same signature pill shape as Home 1 page */
+  border-radius: 50px; 
   background: light-dark(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.05));
   border: 1.5px solid light-dark(var(--secondary), rgba(255, 255, 255, 0.4));
   color: light-dark(var(--secondary), #FFFFFF);
@@ -201,7 +189,6 @@ html[dir="dark"] .blog-hero-title .h-gold {
   box-shadow: 0 6px 18px rgba(74, 46, 109, 0.22);
 }
 
-/* Right Slanted Image Section — Contact Page Style Full-Bleed */
 .blog-hero-right {
   position: relative;
   height: 100%;
@@ -340,7 +327,6 @@ html[data-theme="dark"] .badge-text-wrap strong {
   font-weight: 500;
 }
 
-/* Section Header Block (Tagline, Heading, Subheading matching Home/Index/Contact pages) */
 .blog-header-section {
   padding: 3rem 0 1.5rem;
   background-color: var(--bg-light-theme);
@@ -386,7 +372,6 @@ html[dir="dark"] .section-header-center .h-heading .h-plum {
 }
 
 .section-header-center .h-para {
- /* font-family: 'Inter', sans-serif;*/
   font-size: 1.02rem;
   line-height: 1.6;
   color: var(--text-muted);
@@ -394,7 +379,6 @@ html[dir="dark"] .section-header-center .h-heading .h-plum {
   margin: 0 auto;
 }
 
-/* Category Filter Pills Bar (Centered row without search input) */
 .blog-filter-bar {
   padding: 0.9rem 1.2rem;
   border-radius: 50px;
@@ -476,7 +460,6 @@ html[dir="rtl"] .search-clear-btn {
 
 .search-clear-btn.hidden { display: none; }
 
-/* Category Filter Pills Bar */
 .blog-categories-scroll {
   overflow-x: auto;
   scrollbar-width: none;
@@ -524,10 +507,6 @@ html[dir="rtl"] .search-clear-btn {
   box-shadow: 0 4px 14px rgba(244, 178, 35, 0.3);
 }
 
-
-/* ==========================================================================
-   3. SECTION 2: FEATURED EDITOR'S CHOICE ARTICLE
-   ========================================================================== */
 .blog-featured-section {
   padding: 2.5rem 0 3.5rem;
 }
@@ -681,7 +660,7 @@ html[dir="rtl"] .featured-cat-tag {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.4rem;
-  border-radius: 50px; /* Pill shape matching Hero Section Buttons */
+  border-radius: 50px; 
   background: linear-gradient(135deg, var(--primary) 0%, #D49B1D 100%);
   color: #1A1200;
   font-size: 0.88rem;
@@ -752,10 +731,6 @@ html[dir="rtl"] .btn-read-story:hover .arrow-icon {
   fill: #1a1200 !important;
 }
 
-
-/* ==========================================================================
-   4. SECTION 3: MAIN EDITORIAL GRID & SIDEBAR SECTION
-   ========================================================================== */
 .blog-main-section {
   padding: 2rem 0 4rem;
 }
@@ -799,7 +774,6 @@ html[dir="rtl"] .btn-read-story:hover .arrow-icon {
   gap: 1.8rem;
 }
 
-/* Article Card Component — Compact, Sleek, with Rich Shadow in Both Light and Dark Modes */
 .blog-card {
   display: flex;
   flex-direction: column;
@@ -833,7 +807,7 @@ html[data-theme="dark"] .blog-card:hover {
 
 .card-image-wrap {
   position: relative;
-  height: 165px; /* Compact image height */
+  height: 165px; 
   overflow: hidden;
 }
 
@@ -1018,7 +992,6 @@ html[dir="rtl"] .blog-card:hover .card-hover-arrow-wrap {
   transform: translateX(-3px);
 }
 
-/* Card Read More Pill Button — Matching Hero Section Pill Buttons (border-radius: 50px) */
 .btn-card-readmore {
   display: inline-flex;
   align-items: center;
@@ -1069,7 +1042,6 @@ html[dir="rtl"] .btn-card-readmore:hover .btn-arrow {
   gap: 0.6rem;
 }
 
-/* Empty Search State */
 .blog-empty-state {
   padding: 3rem 2rem;
   text-align: center;
@@ -1109,7 +1081,6 @@ html[dir="rtl"] .btn-card-readmore:hover .btn-arrow {
   box-shadow: 0 4px 14px rgba(244, 178, 35, 0.3);
 }
 
-/* Load More & Pagination Wrappers */
 .blog-pagination-wrap {
   margin-top: 3rem;
   display: flex;
@@ -1171,10 +1142,6 @@ html[dir="rtl"] .btn-card-readmore:hover .btn-arrow {
   padding: 0 1rem;
 }
 
-
-/* ==========================================================================
-   5. SIDEBAR WIDGETS (TRENDING, TAGS & NEWSLETTER)
-   ========================================================================== */
 .blog-sidebar {
   display: flex;
   flex-direction: column;
@@ -1249,7 +1216,6 @@ html[dir="rtl"] .btn-card-readmore:hover .btn-arrow {
   color: var(--text-muted);
 }
 
-/* Tag Cloud */
 .tags-cloud {
   display: flex;
   flex-wrap: wrap;
@@ -1275,7 +1241,6 @@ html[dir="rtl"] .btn-card-readmore:hover .btn-arrow {
   transform: translateY(-1px);
 }
 
-/* Sidebar Newsletter Card */
 .newsletter-sidebar-card {
   text-align: center;
   background: linear-gradient(135deg, light-dark(#FFF5E6, #1E1A17) 0%, light-dark(#FFFFFF, #28211C) 100%);
@@ -1349,7 +1314,6 @@ html[dir="rtl"] .btn-card-readmore:hover .btn-arrow {
   opacity: 0.8;
   margin-top: 0.6rem;
 }
-
 
 .blog-newsletter-section {
   padding: 3.5rem 0;
@@ -1430,7 +1394,7 @@ html[data-theme="dark"] .newsletter-full-card {
   flex: 1;
   height: 50px;
   padding: 0 1.5rem;
-  border-radius: 50px; /* Signature Pill Shape matching Hero Buttons */
+  border-radius: 50px; 
   background: light-dark(rgba(255, 255, 255, 0.95), rgba(0, 0, 0, 0.25));
   border: 1.5px solid var(--border-color);
   color: var(--text-main);
@@ -1448,7 +1412,7 @@ html[data-theme="dark"] .newsletter-full-card {
 .newsletter-btn {
   height: 50px;
   padding: 0 1.8rem;
-  border-radius: 50px; /* Signature Pill Shape matching Hero Buttons */
+  border-radius: 50px; 
   background: linear-gradient(135deg, var(--primary) 0%, #D49B1D 100%);
   color: #1A1200;
   font-family: 'Inter', sans-serif;
@@ -1484,17 +1448,13 @@ html[data-theme="dark"] .newsletter-full-card {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  color: var(--secondary); /* Secondary Plum color in Light Mode */
+  color: var(--secondary); 
 }
 
 html[data-theme="dark"] .perk-item {
-  color: var(--primary); /* Primary Gold color in Dark Mode */
+  color: var(--primary); 
 }
 
-
-/* ==========================================================================
-   7. TOAST NOTIFICATION STYLING
-   ========================================================================== */
 .blog-toast {
   position: fixed;
   bottom: 2rem;
@@ -1548,15 +1508,8 @@ html[dir="rtl"] .blog-toast {
   to { transform: translateY(0); opacity: 1; }
 }
 
-
-/* ==========================================================================
-   8. RESPONSIVE BREAKPOINTS
-   ========================================================================== */
-
-/* Mobile (< 640px) */
 @media (max-width: 639.98px) {
   .blog-page-main {
-   /* padding-top: 4.5rem;*/
   }
   .blog-hero-section {
     padding: 0;
@@ -1711,10 +1664,9 @@ html[dir="rtl"] .blog-toast {
   }
 }
 
-/* Extra Small Mobile (iPhone SE 375px, Samsung Galaxy 360px - 412px) */
 @media (max-width: 480px) {
   .newsletter-full-card {
-    padding: 2.2rem 1.4rem; /* Spacious padding between content and card border */
+    padding: 2.2rem 1.4rem; 
     border-radius: 22px;
   }
   .input-btn-group {
@@ -1729,7 +1681,7 @@ html[dir="rtl"] .blog-toast {
     padding: 1rem 1.5rem;
     font-size: 0.88rem;
     text-align: center;
-    border-radius: 50px; /* Identical Pill Shape matching Join Connoisseur Button */
+    border-radius: 50px; 
     box-sizing: border-box;
   }
   .newsletter-btn {
@@ -1738,7 +1690,7 @@ html[dir="rtl"] .blog-toast {
     font-size: 0.88rem;
     padding: 0 1.4rem;
     justify-content: center;
-    border-radius: 50px; /* Identical Pill Shape matching Join Connoisseur Button */
+    border-radius: 50px; 
     box-sizing: border-box;
   }
   .newsletter-perks {
@@ -1748,7 +1700,6 @@ html[dir="rtl"] .blog-toast {
   }
 }
 
-/* Tablet (640px - 1024px) */
 @media (min-width: 640px) and (max-width: 1023.98px) {
   .blog-hero-grid {
     grid-template-columns: 48% 52%;
@@ -1847,7 +1798,6 @@ html[dir="rtl"] .blog-toast {
   }
 }
 
-/* Desktop (1024px - 1280px) */
 @media (min-width: 1024px) and (max-width: 1279.98px) {
   .blog-hero-grid {
     grid-template-columns: 50% 50%;
@@ -1916,7 +1866,6 @@ html[dir="rtl"] .blog-toast {
   }
 }
 
-/* Large Desktop (> 1280px) */
 @media (min-width: 1280px) {
   .blog-container {
     max-width: 1280px;

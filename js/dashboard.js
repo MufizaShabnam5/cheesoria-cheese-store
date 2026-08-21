@@ -1,7 +1,4 @@
-/**
- * CHEESORIA STORE DASHBOARD CONTROLLER JS
- * Handles Theme, RTL, Mobile Drawer, Topbar Dropdowns, Dynamic Tab View Switching, and Logout.
- */
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initThemeEngine();
@@ -13,9 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initSettingsForm();
 });
 
-/* --------------------------------------------------------------------------
-   1. THEME ENGINE (LIGHT / DARK MODE TOGGLE - SYNCED WITH CHEESSO-THEME)
-   -------------------------------------------------------------------------- */
 function initThemeEngine() {
   const themeBtn = document.getElementById('dash-theme-toggle');
   
@@ -36,14 +30,11 @@ function initThemeEngine() {
 
 function setTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
-  document.documentElement.style.colorScheme = theme; // Force light-dark() CSS re-evaluation
+  document.documentElement.style.colorScheme = theme; 
   localStorage.setItem('cheesso-theme', theme);
   document.dispatchEvent(new CustomEvent('themechanged', { detail: { theme } }));
 }
 
-/* --------------------------------------------------------------------------
-   2. RTL ENGINE (LTR / RTL TOGGLE - SYNCED WITH CHEESSO-RTL)
-   -------------------------------------------------------------------------- */
 function initRtlEngine() {
   const rtlBtn = document.getElementById('dash-rtl-toggle');
   const savedRtl = localStorage.getItem('cheesso-rtl') === 'true';
@@ -64,9 +55,6 @@ function setRtl(enable) {
   localStorage.setItem('cheesso-rtl', enable);
 }
 
-/* --------------------------------------------------------------------------
-   3. MOBILE SIDEBAR DRAWER & BACKDROP
-   -------------------------------------------------------------------------- */
 function initSidebarDrawer() {
   const hamburger = document.getElementById('hamburger-menu-btn');
   const sidebar = document.getElementById('dashboard-sidebar');
@@ -88,9 +76,6 @@ function initSidebarDrawer() {
   if (backdrop) backdrop.addEventListener('click', closeSidebar);
 }
 
-/* --------------------------------------------------------------------------
-   4. TOPBAR DROPDOWNS (NOTIFICATIONS & PROFILE MENU)
-   -------------------------------------------------------------------------- */
 function initTopbarDropdowns() {
   const notifBtn = document.getElementById('notif-bell-btn');
   const notifDropdown = document.getElementById('notif-dropdown');
@@ -100,7 +85,6 @@ function initTopbarDropdowns() {
   const profileBtn = document.getElementById('profile-menu-btn');
   const profileDropdown = document.getElementById('profile-dropdown');
 
-  // Toggle Notifications Dropdown
   if (notifBtn && notifDropdown) {
     notifBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -109,7 +93,6 @@ function initTopbarDropdowns() {
     });
   }
 
-  // Clear unread notifications
   if (markReadBtn && notifBadge) {
     markReadBtn.addEventListener('click', () => {
       const unreadItems = document.querySelectorAll('.notif-item.unread');
@@ -118,7 +101,6 @@ function initTopbarDropdowns() {
     });
   }
 
-  // Toggle Profile Menu Dropdown
   if (profileBtn && profileDropdown) {
     profileBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -127,17 +109,12 @@ function initTopbarDropdowns() {
     });
   }
 
-  // Close dropdowns when clicking outside
   document.addEventListener('click', () => {
     if (notifDropdown) notifDropdown.classList.add('hidden');
     if (profileDropdown) profileDropdown.classList.add('hidden');
   });
 }
 
-/* --------------------------------------------------------------------------
-   5. DYNAMIC TAB VIEW SWITCHING ENGINE
-   When user clicks left sidebar items, related right side content appears!
-   -------------------------------------------------------------------------- */
 function initSidebarNavigation() {
   const navItems = document.querySelectorAll('.sidebar-nav .nav-item');
   const navTriggers = document.querySelectorAll('.nav-trigger');
@@ -145,7 +122,6 @@ function initSidebarNavigation() {
   const bcTitle = document.getElementById('current-section-title');
 
   function switchSection(sectionId) {
-    // 1. Update Active State on Sidebar Links
     navItems.forEach(item => {
       const itemSection = item.getAttribute('data-section');
       if (itemSection === sectionId) {
@@ -157,7 +133,6 @@ function initSidebarNavigation() {
       }
     });
 
-    // 2. Hide all view sections and show target section
     viewSections.forEach(section => {
       section.classList.remove('active');
     });
@@ -166,22 +141,18 @@ function initSidebarNavigation() {
     if (targetSection) {
       targetSection.classList.add('active');
     } else {
-      // Fallback to overview
       const defaultSection = document.getElementById('section-overview');
       if (defaultSection) defaultSection.classList.add('active');
     }
 
-    // 3. Scroll main container to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // 4. Close mobile sidebar drawer if open
     const sidebar = document.getElementById('dashboard-sidebar');
     const backdrop = document.getElementById('sidebar-backdrop');
     if (sidebar) sidebar.classList.remove('active');
     if (backdrop) backdrop.classList.remove('active');
   }
 
-  // Bind click listener to sidebar nav links
   navItems.forEach(item => {
     item.addEventListener('click', (e) => {
       e.preventDefault();
@@ -190,7 +161,6 @@ function initSidebarNavigation() {
     });
   });
 
-  // Bind click listener to in-page trigger links (e.g. profile menu settings link)
   navTriggers.forEach(trigger => {
     trigger.addEventListener('click', (e) => {
       e.preventDefault();
@@ -199,16 +169,12 @@ function initSidebarNavigation() {
     });
   });
 
-  // Handle URL Hash on Load
   const hash = window.location.hash.replace('#', '');
   if (hash && document.getElementById(`section-${hash}`)) {
     switchSection(hash);
   }
 }
 
-/* --------------------------------------------------------------------------
-   6. LOGOUT HANDLERS & TOAST CONFIRMATION
-   -------------------------------------------------------------------------- */
 function initLogoutHandlers() {
   const sidebarLogout = document.getElementById('sidebar-logout-btn');
   const headerLogout = document.getElementById('header-logout-btn');
@@ -225,9 +191,6 @@ function initLogoutHandlers() {
   if (headerLogout) headerLogout.addEventListener('click', handleLogout);
 }
 
-/* --------------------------------------------------------------------------
-   7. SETTINGS FORM SUBMIT HANDLER
-   -------------------------------------------------------------------------- */
 function initSettingsForm() {
   const form = document.getElementById('settings-form');
   if (form) {

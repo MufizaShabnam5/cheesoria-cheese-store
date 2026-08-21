@@ -1,10 +1,4 @@
-/* ==========================================================================
-   Cheesoria Artisanal Boutique - Premium Services Page Stylesheet
-   ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   0. Base Page & Theme Specific Overrides
-   -------------------------------------------------------------------------- */
 .services-page-body {
   background-color: var(--bg-light-theme);
   color: var(--text-main);
@@ -16,7 +10,6 @@
   width: 100%;
 }
 
-/* Script Cursive Badge Matching Homepage & About Page */
 .services-page-body .script-badge,
 .services-page-body .section-header .badge-script {
   font-family: 'Alex Brush', cursive !important;
@@ -43,7 +36,6 @@
   color: light-dark(var(--secondary), #FFF7E8);
 }
 
-/* Section Containers & Headers */
 .services-page-body section {
   position: relative;
   padding: 5.5rem 0;
@@ -83,7 +75,6 @@
   line-height: 1.6;
 }
 
-/* Round Pill Buttons Matching Brand Standard */
 .services-page-body .btn,
 .services-page-body .btn-primary,
 .services-page-body .btn-secondary {
@@ -97,9 +88,6 @@
   transition: var(--transition-smooth);
 }
 
-/* ==========================================================================
-   SECTION 1: HERO — Split Layout with Slanted Image & Floating Glass Cards
-   ========================================================================== */
 .services-hero-section {
   position: relative;
   padding: 0 !important;
@@ -160,7 +148,6 @@
   flex-wrap: wrap;
 }
 
-/* Glassmorphism Feature Strip in Hero */
 .services-hero-stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -214,7 +201,6 @@
   margin-top: 2px;
 }
 
-/* Hero Right: Slanted Media Frame */
 .services-hero-right {
   position: relative;
   height: 100%;
@@ -262,7 +248,6 @@ html[dir="rtl"] .slanted-media-frame,
   pointer-events: none;
 }
 
-/* Floating Glass Cards on Hero Media */
 .floating-glass-card {
   position: absolute;
   z-index: 10;
@@ -325,9 +310,6 @@ html[dir="rtl"] .slanted-media-frame,
   font-family: 'Playfair Display', serif;
 }
 
-/* ==========================================================================
-   SECTION 2: OUR PREMIUM SERVICES — 8 Luxury Cards
-   ========================================================================== */
 .services-grid-section {
   background-color: var(--bg-light-theme);
 }
@@ -529,9 +511,6 @@ html[dir="rtl"] .srv-card-btn:hover svg {
   transform: translateX(-4px);
 }
 
-/* ==========================================================================
-   SECTION 3: HOW IT WORKS — Horizontal Timeline
-   ========================================================================== */
 .how-it-works-section {
   background-color: var(--bg-primary-theme);
   border-top: 1px solid var(--border-color);
@@ -550,7 +529,6 @@ html[dir="rtl"] .srv-card-btn:hover svg {
   position: relative;
 }
 
-/* Horizontal connecting line behind step nodes */
 .srv-timeline-track::before {
   content: '';
   position: absolute;
@@ -662,9 +640,6 @@ html[dir="rtl"] .srv-card-btn:hover svg {
   line-height: 1.5;
 }
 
-/* ==========================================================================
-   SECTION 4: WHY CHOOSE CHEESORIA — Premium Icon Cards
-   ========================================================================== */
 .why-choose-section {
   background-color: var(--bg-light-theme);
 }
@@ -731,9 +706,6 @@ html[dir="rtl"] .srv-card-btn:hover svg {
   line-height: 1.6;
 }
 
-/* ==========================================================================
-   SECTION 5: FEATURED CHEESE COLLECTIONS — Filterable Interactive Cards
-   ========================================================================== */
 .collections-section {
   background-color: var(--bg-primary-theme);
   border-top: 1px solid var(--border-color);
@@ -871,9 +843,6 @@ html[dir="rtl"] .srv-col-badge {
   gap: 0.3rem;
 }
 
-/* ==========================================================================
-   SECTION 6: TESTIMONIALS — Glassmorphism Carousel
-   ========================================================================== */
 .testimonials-section {
   background-color: var(--bg-light-theme);
   overflow: hidden;
@@ -968,7 +937,6 @@ html[dir="rtl"] .srv-author-info {
   font-weight: 500;
 }
 
-/* Carousel Controls & Dots */
 .srv-carousel-controls {
   display: flex;
   align-items: center;
@@ -1024,9 +992,6 @@ html[dir="rtl"] .srv-author-info {
   background: var(--primary);
 }
 
-/* ==========================================================================
-   SECTION 7: FAQ — Refined Accordion
-   ========================================================================== */
 .faq-section {
   background-color: var(--bg-primary-theme);
   border-top: 1px solid var(--border-color);
@@ -1108,9 +1073,6 @@ html[dir="rtl"] .srv-faq-question {
   line-height: 1.65;
 }
 
-/* ==========================================================================
-   SECTION 8: LUXURY CTA BANNER — High-Impact Banner
-   ========================================================================== */
 .cta-banner-section {
   padding: 6rem 0 !important;
   background-color: var(--bg-light-theme);
@@ -1249,11 +1211,6 @@ html[dir="rtl"] .srv-faq-question {
   box-shadow: 0 6px 20px rgba(74, 46, 109, 0.4);
 }
 
-/* ==========================================================================
-   RESPONSIVE DESIGN BREAKPOINTS - HERO SCREEN FIT ACROSS ALL BREAKPOINTS
-   ========================================================================== */
-
-/* 1. MOBILE (< 640px) - iPhone & Smartphone Optimization */
 @media (max-width: 639.98px) {
   .services-hero-section {
     height: auto;
@@ -1424,7 +1381,6 @@ html[dir="rtl"] .srv-faq-question {
   }
 }
 
-/* 2. TABLET (640px - 1024px) - iPad Mini & Tablet Optimization */
 @media (min-width: 640px) and (max-width: 1023.98px) {
   .services-hero-section {
     height: auto !important;
@@ -1432,7 +1388,6 @@ html[dir="rtl"] .srv-faq-question {
     max-height: none !important;
     box-sizing: border-box;
     overflow: visible;
-   /* padding: 2.5rem 0 !important;*/
     display: flex;
     align-items: center;
   }
@@ -1570,7 +1525,6 @@ html[dir="rtl"] .srv-faq-question {
     z-index: 1;
   }
 
-  /* Connecting line for Steps 4 & 5 on iPad Mini */
   .srv-timeline-step:nth-child(4)::after {
     content: '';
     position: absolute;
@@ -1591,7 +1545,6 @@ html[dir="rtl"] .srv-faq-question {
   }
 }
 
-/* 3. DESKTOP (1024px - 1280px) */
 @media (min-width: 1024px) and (max-width: 1279.98px) {
   .services-hero-section {
     height: calc(100dvh - var(--navbar-height, 80px));
@@ -1662,9 +1615,7 @@ html[dir="rtl"] .srv-faq-question {
   }
 }
 
-/* Nest Hub Specific Display Optimization (1024px Viewport) */
 @media (min-width: 1020px) and (max-width: 1028px), (width: 1024px) and (height: 600px) {
-  /* Simple & Flawless Section - Package Card Coolant Line Fix & Step Cards Alignment */
   .srv-timeline-track {
     gap: 0.8rem !important;
   }
@@ -1682,13 +1633,11 @@ html[dir="rtl"] .srv-faq-question {
     word-spacing: -0.02em !important;
     min-height: 4.3em !important;
   }
-  /* Package Step Card (Step 3) - Prevent 'coolant' from breaking into a lone line */
   .srv-timeline-step:nth-child(3) .step-desc {
     letter-spacing: -0.02em !important;
     word-spacing: -0.03em !important;
   }
 
-  /* Services Cards Grid - Wholesale Supply & B2B Distribution 2-Line Title Fix */
   .srv-card-title {
     font-size: 1.05rem !important;
     line-height: 1.25 !important;
@@ -1696,7 +1645,6 @@ html[dir="rtl"] .srv-faq-question {
   }
 }
 
-/* 4. LARGE SCREEN (> 1280px) */
 @media (min-width: 1280px) {
   .services-hero-section {
     height: calc(100dvh - var(--navbar-height, 80px));

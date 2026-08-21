@@ -1,14 +1,4 @@
-/* ==========================================================================
-   CHEESORIA STORE DASHBOARD STYLESHEET
-   --------------------------------------------------------------------------
-   Design System:
-   - Primary Accent: #F4B223 (Gold)
-   - Secondary Accent: #4A2E6D (Royal Purple)
-   - Background Light: #FAF6F0 / Dark: #171411
-   - Glassmorphism & Light-Dark Engine Integrated
-   ========================================================================== */
 
-/* Base Reset & Variables for Dashboard */
 :root {
   --sidebar-width: 260px;
   --topbar-height: 72px;
@@ -24,9 +14,6 @@ body.dashboard-body-tag {
   overflow-x: hidden;
 }
 
-/* --------------------------------------------------------------------------
-   1. DASHBOARD LAYOUT GRID
-   -------------------------------------------------------------------------- */
 .dashboard-layout {
   display: flex;
   min-height: 100vh;
@@ -34,9 +21,6 @@ body.dashboard-body-tag {
   position: relative;
 }
 
-/* --------------------------------------------------------------------------
-   2. FIXED SIDEBAR NAVIGATION
-   -------------------------------------------------------------------------- */
 .dashboard-sidebar {
   width: var(--sidebar-width);
   height: 100vh;
@@ -61,7 +45,6 @@ body.dashboard-body-tag {
   border-left: 1px solid var(--border-color);
 }
 
-/* Sidebar Brand Header - Center-Aligned Subtitle */
 .sidebar-brand-wrap {
   padding: 1rem 1.2rem;
   display: flex;
@@ -96,22 +79,20 @@ body.dashboard-body-tag {
   line-height: 1.1;
 }
 
-/* Matching .logo-name in navbar.css */
 .brand-title {
   font-family: 'Playfair Display', serif;
   font-size: 1.45rem;
   font-weight: 700;
-  color: var(--primary); /* Gold in both modes */
+  color: var(--primary); 
   letter-spacing: -0.02em;
   text-align: center;
 }
 
-/* Center-Aligned .brand-sub relative to Cheesoria */
 .brand-sub {
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: light-dark(var(--secondary), var(--primary)); /* Secondary in light, Primary in dark */
+  color: light-dark(var(--secondary), var(--primary)); 
   text-transform: uppercase;
   text-align: center;
   width: 100%;
@@ -127,7 +108,6 @@ body.dashboard-body-tag {
   cursor: pointer;
 }
 
-/* Sidebar Nav Links with Right-Aligned Badges */
 .sidebar-nav {
   padding: 0.8rem 1rem;
   display: flex;
@@ -190,7 +170,6 @@ body.dashboard-body-tag {
   flex: 1;
 }
 
-/* Right-Aligned Badges for "8 New" & Stock Numbers */
 .nav-badge {
   font-size: 0.72rem;
   font-weight: 700;
@@ -198,7 +177,7 @@ body.dashboard-body-tag {
   border-radius: 50px;
   background: light-dark(rgba(74, 46, 109, 0.1), rgba(244, 178, 35, 0.15));
   color: var(--heading-color);
-  margin-left: auto; /* Push to right boundary */
+  margin-left: auto; 
   flex-shrink: 0;
 }
 
@@ -229,7 +208,6 @@ body.dashboard-body-tag {
   color: var(--primary);
 }
 
-/* Sidebar Footer & User Info */
 .sidebar-footer {
   padding: 0.8rem 1rem;
   border-top: 1px solid var(--border-color);
@@ -312,7 +290,6 @@ body.dashboard-body-tag {
   border-color: #E53935;
 }
 
-/* Sidebar Backdrop Mobile */
 .sidebar-backdrop {
   position: fixed;
   inset: 0;
@@ -326,9 +303,6 @@ body.dashboard-body-tag {
   display: block;
 }
 
-/* --------------------------------------------------------------------------
-   3. MAIN CONTENT CONTAINER & TOPBAR HEADER
-   -------------------------------------------------------------------------- */
 .dashboard-main {
   margin-left: var(--sidebar-width);
   flex: 1;
@@ -343,7 +317,6 @@ body.dashboard-body-tag {
   margin-right: var(--sidebar-width);
 }
 
-/* Topbar Header */
 .dashboard-topbar {
   height: var(--topbar-height);
   position: sticky;
@@ -406,7 +379,6 @@ body.dashboard-body-tag {
   font-weight: 700;
 }
 
-/* Topbar Right Controls */
 .topbar-right {
   display: flex;
   align-items: center;
@@ -452,13 +424,11 @@ body.dashboard-body-tag {
   color: var(--primary);
 }
 
-/* Theme Icons Toggle */
 html[data-theme="dark"] .theme-icon-sun { display: inline-block; }
 html[data-theme="dark"] .theme-icon-moon { display: none; }
 html[data-theme="light"] .theme-icon-sun { display: none; }
 html[data-theme="light"] .theme-icon-moon { display: inline-block; }
 
-/* Notifications Badge */
 .notif-badge {
   position: absolute;
   top: -4px;
@@ -475,7 +445,6 @@ html[data-theme="light"] .theme-icon-moon { display: inline-block; }
   justify-content: center;
 }
 
-/* Topbar Dropdown Containers */
 .topbar-dropdown-wrap {
   position: relative;
 }
@@ -567,7 +536,6 @@ html[data-theme="light"] .theme-icon-moon { display: inline-block; }
   font-weight: 600;
 }
 
-/* Profile Icon Button in Top Right Corner */
 .topbar-profile-btn {
   display: flex;
   align-items: center;
@@ -597,7 +565,6 @@ html[data-theme="light"] .theme-icon-moon { display: inline-block; }
   color: var(--heading-color);
 }
 
-/* Profile Dropdown Menu Card */
 .profile-card {
   width: 240px;
 }
@@ -688,12 +655,6 @@ html[data-theme="light"] .theme-icon-moon { display: inline-block; }
   margin-right: var(--sidebar-width);
 }
 
-/* --------------------------------------------------------------------------
-   4. DYNAMIC VIEW SECTIONS
-   -------------------------------------------------------------------------- */
-/* --------------------------------------------------------------------------
-   4. DYNAMIC VIEW SECTIONS (COMPACT ULTRA-TIGHT SPACING)
-   -------------------------------------------------------------------------- */
 .dashboard-body {
   padding: 0.65rem 1.4rem 2rem;
   width: 100%;
@@ -703,7 +664,7 @@ html[data-theme="light"] .theme-icon-moon { display: inline-block; }
 }
 
 .dash-view-section {
-  display: none; /* Controlled by tab switcher in js/dashboard.js */
+  display: none; 
 }
 
 .dash-view-section.active {
@@ -722,7 +683,6 @@ html[data-theme="light"] .theme-icon-moon { display: inline-block; }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Section 1: Welcome Banner Card */
 .dash-welcome-card {
   padding: 0.85rem 1.3rem;
   border-radius: 16px;
@@ -791,7 +751,6 @@ html[data-theme="light"] .theme-icon-moon { display: inline-block; }
 .pill-dot.green { background: #4CAF50; box-shadow: 0 0 6px #4CAF50; }
 .pill-dot.gold { background: var(--primary); box-shadow: 0 0 6px var(--primary); }
 
-/* Ultra-Premium Redesigned "View Storefront" Button */
 .view-storefront-btn {
   display: inline-flex;
   align-items: center;
@@ -831,7 +790,6 @@ html[data-theme="light"] .theme-icon-moon { display: inline-block; }
   transform: translateX(4px);
 }
 
-/* Section 2: Data Metrics Cards Grid */
 .dash-metrics-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -912,7 +870,6 @@ html[data-theme="light"] .theme-icon-moon { display: inline-block; }
   margin: 0;
 }
 
-/* Section 3: Panel Section & Recent Orders */
 .dash-panel-section {
   display: flex;
   flex-direction: column;
@@ -1049,7 +1006,6 @@ html[data-theme="light"] .theme-icon-moon { display: inline-block; }
   color: var(--primary);
 }
 
-/* Orders List Card */
 .orders-list {
   padding: 0.85rem;
   border-radius: 16px;
@@ -1110,7 +1066,6 @@ html[data-theme="light"] .theme-icon-moon { display: inline-block; }
   color: var(--heading-color);
 }
 
-/* Settings Form Controls */
 .settings-card {
   padding: 1.4rem 1.6rem;
   border-radius: 18px;
@@ -1186,7 +1141,6 @@ html[data-theme="light"] .theme-icon-moon { display: inline-block; }
   justify-content: flex-start;
 }
 
-/* Toast Modal */
 .dash-toast {
   position: fixed;
   bottom: 30px;
@@ -1204,11 +1158,6 @@ html[data-theme="light"] .theme-icon-moon { display: inline-block; }
 
 .dash-toast.hidden { display: none; }
 
-/* ==========================================================================
-   RESPONSIVE MEDIA QUERIES FOR ALL BREAKPOINTS
-   ========================================================================== */
-
-/* 1. MOBILE (< 640px) */
 @media (max-width: 639.98px) {
   .dashboard-sidebar {
     transform: translateX(-100%);
@@ -1288,7 +1237,6 @@ html[data-theme="light"] .theme-icon-moon { display: inline-block; }
   }
 }
 
-/* 2. TABLET (640px - 1024px) */
 @media (min-width: 640px) and (max-width: 1023.98px) {
   .dashboard-sidebar {
     transform: translateX(-100%);
@@ -1331,7 +1279,6 @@ html[data-theme="light"] .theme-icon-moon { display: inline-block; }
   }
 }
 
-/* 3. DESKTOP (1024px - 1280px) */
 @media (min-width: 1024px) and (max-width: 1279.98px) {
   .dashboard-body {
     padding: 0.65rem 1.2rem 2rem;
@@ -1347,7 +1294,6 @@ html[data-theme="light"] .theme-icon-moon { display: inline-block; }
   .dash-panel-section { gap: 0.45rem; }
 }
 
-/* 4. LARGE DESKTOP (> 1280px) */
 @media (min-width: 1280px) {
   .dashboard-body {
     width: 100%;

@@ -1,8 +1,4 @@
-/* ==========================================================================
-   CHEESORIA LUXURY AUTHENTICATION STYLESHEET (css/auth.css)
-   ========================================================================== */
 
-/* 1. STRICT NO-SCROLL BODY & CONTAINER */
 html, body {
   height: 100vh;
   max-height: 100vh;
@@ -26,7 +22,6 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Floating Ambient Luxury Glow Orbs (Background Ambiance) */
 .auth-ambient-glow {
   position: absolute;
   top: 0;
@@ -78,7 +73,6 @@ html, body {
   100% { transform: translate(-30px, 40px) scale(0.95); }
 }
 
-/* 2. NO-SCROLL AUTH CARD LAYOUT */
 .auth-container {
   width: 100%;
   max-width: 410px;
@@ -99,13 +93,13 @@ html, body {
   transition: var(--transition-fast);
   max-height: 97vh;
   overflow-y: auto;
-  scrollbar-width: none; /* Firefox: hide scrollbar */
-  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
   box-sizing: border-box;
 }
 
 .auth-card::-webkit-scrollbar {
-  display: none; /* Chrome/Safari: hide scrollbar */
+  display: none; 
   width: 0;
   height: 0;
 }
@@ -115,7 +109,6 @@ html, body {
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.16), 0 0 50px rgba(244, 178, 35, 0.1);
 }
 
-/* 3. TOP-RIGHT CONTROLS (RTL & DARK MODE TOGGLES) */
 .auth-top-controls {
   position: absolute;
   top: 0.75rem;
@@ -162,7 +155,6 @@ html[dir="rtl"] .auth-top-controls {
 html[data-theme="dark"] .theme-icon-sun { display: inline-block; }
 html[data-theme="dark"] .theme-icon-moon { display: none; }
 
-/* 4. HORIZONTAL LOGO (EMOJI LEFT OF LOGO NAME & SUBTITLE) */
 .auth-header {
   display: flex;
   flex-direction: column;
@@ -225,7 +217,6 @@ html[data-theme="dark"] .theme-icon-moon { display: none; }
   width: 100%;
 }
 
-/* 5. TAGLINE FONT STYLE & COLOR FOR WELCOME BACK / JOIN CHEESORIA */
 .auth-title {
   font-family: 'Alex Brush', cursive;
   font-size: clamp(1.35rem, 2vw, 1.65rem);
@@ -244,7 +235,6 @@ html[dir="rtl"] .auth-title {
   padding-right: 1.4rem;
 }
 
-/* 6. SUBTEXT FONTSTYLE IN ALL MEDIA QUERIES */
 .auth-subtitle {
   font-family: 'Inter', sans-serif;
   font-size: 0.76rem;
@@ -257,7 +247,6 @@ html[dir="rtl"] .auth-title {
   opacity: 0.9;
 }
 
-/* 7. VERTICALLY STACKED FORM FIELDS (COMPACT NO-SCROLL) */
 .auth-form {
   display: flex;
   flex-direction: column;
@@ -339,7 +328,6 @@ html[dir="rtl"] .auth-input {
   box-shadow: 0 0 0 3px rgba(244, 178, 35, 0.18);
 }
 
-/* Password Eye Toggle Button */
 .eye-toggle-btn {
   position: absolute;
   right: 0.65rem;
@@ -379,7 +367,6 @@ html[dir="rtl"] .eye-toggle-btn {
   color: var(--primary);
 }
 
-/* 8. REMEMBER ME & FORGOT PASSWORD (SAME ROW) */
 .form-options-row {
   display: flex;
   align-items: center;
@@ -419,7 +406,6 @@ html[dir="rtl"] .eye-toggle-btn {
   text-decoration: underline;
 }
 
-/* Terms Checkbox for Sign Up */
 .terms-label {
   font-size: 0.72rem;
   line-height: 1.25;
@@ -436,7 +422,6 @@ html[dir="rtl"] .eye-toggle-btn {
   text-decoration: underline;
 }
 
-/* 9. FULL-WIDTH CTA BUTTON */
 .auth-submit-btn {
   width: 100%;
   height: 36px;
@@ -486,7 +471,6 @@ html[dir="rtl"] .auth-submit-btn:hover .btn-arrow-icon {
   transform: translateY(0);
 }
 
-/* 10. SOCIAL LOGIN & DIVIDER */
 .social-divider {
   display: flex;
   align-items: center;
@@ -548,7 +532,6 @@ html[dir="rtl"] .auth-submit-btn:hover .btn-arrow-icon {
   flex-shrink: 0;
 }
 
-/* 11. CARD FOOTER LINKS */
 .auth-footer {
   text-align: center;
   margin-top: 0.5rem;
@@ -574,7 +557,6 @@ html[dir="rtl"] .auth-switch-link {
   text-decoration: underline;
 }
 
-/* Feedback Alert Message */
 .auth-alert {
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
@@ -600,9 +582,6 @@ html[dir="rtl"] .auth-switch-link {
   color: #F44336;
 }
 
-/* 12. RESPONSIVE BREAKPOINTS (ALL NO-SCROLL MATCHED SUBTEXT & TAGLINES) */
-
-/* Mobile (< 640px) */
 @media (max-width: 639.98px) {
   .auth-body {
     padding: 0.3rem;
@@ -662,7 +641,6 @@ html[dir="rtl"] .auth-switch-link {
   }
 }
 
-/* Tablet (640px - 1024px) */
 @media (min-width: 640px) and (max-width: 1023.98px) {
   .auth-container {
     max-width: 410px;
@@ -676,7 +654,6 @@ html[dir="rtl"] .auth-switch-link {
   }
 }
 
-/* Desktop (1024px - 1280px) */
 @media (min-width: 1024px) and (max-width: 1279.98px) {
   .auth-container {
     max-width: 415px;
@@ -690,7 +667,6 @@ html[dir="rtl"] .auth-switch-link {
   }
 }
 
-/* Large Desktop (> 1280px) */
 @media (min-width: 1280px) {
   .auth-container {
     max-width: 420px;

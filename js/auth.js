@@ -1,6 +1,4 @@
-/* ==========================================================================
-   CHEESORIA LUXURY AUTHENTICATION JAVASCRIPT (js/auth.js)
-   ========================================================================== */
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initThemeAndDir();
@@ -8,21 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
   initFormHandler();
 });
 
-/**
- * 1. Initialize Theme & Text Direction (RTL / LTR) with LocalStorage Persistence
- */
 function initThemeAndDir() {
   const htmlEl = document.documentElement;
 
-  // Restore Theme
   const savedTheme = localStorage.getItem('cheesso-theme') || localStorage.getItem('cheesoria_theme') || 'dark';
   applyTheme(savedTheme);
 
-  // Restore Direction
   const savedDir = localStorage.getItem('cheesoria_dir') || (localStorage.getItem('cheesso-rtl') === 'true' ? 'rtl' : 'ltr');
   applyDir(savedDir);
 
-  // Theme Toggle Button
   const themeBtn = document.getElementById('auth-theme-toggle');
   if (themeBtn) {
     themeBtn.addEventListener('click', (e) => {
@@ -33,7 +25,6 @@ function initThemeAndDir() {
     });
   }
 
-  // RTL Toggle Button
   const rtlBtn = document.getElementById('auth-rtl-toggle');
   if (rtlBtn) {
     rtlBtn.addEventListener('click', (e) => {
@@ -60,9 +51,6 @@ function applyDir(dir) {
   localStorage.setItem('cheesoria_dir', dir);
 }
 
-/**
- * 2. Password Visibility Eye Toggle Handler
- */
 function initPasswordToggles() {
   const eyeButtons = document.querySelectorAll('.eye-toggle-btn');
 
@@ -77,7 +65,6 @@ function initPasswordToggles() {
       const isPassword = inputEl.type === 'password';
       inputEl.type = isPassword ? 'text' : 'password';
 
-      // Toggle Icon
       const iconSpan = btn.querySelector('.eye-icon');
       if (iconSpan) {
         iconSpan.innerHTML = isPassword 
@@ -90,9 +77,6 @@ function initPasswordToggles() {
   });
 }
 
-/**
- * 3. Form Submission Handling with Feedback Alert
- */
 function initFormHandler() {
   const loginForm = document.getElementById('login-form');
   const signupForm = document.getElementById('signup-form');

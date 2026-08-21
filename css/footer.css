@@ -21,7 +21,6 @@
   gap: 1.5rem;
 }
 
-/* Brand Column */
 .footer-logo {
   display: flex;
   align-items: center;
@@ -63,7 +62,6 @@
   transform: translateY(-2px);
 }
 
-/* Column Details */
 .footer-title {
   font-size: 1.1rem;
   font-weight: 600;
@@ -161,7 +159,6 @@ html[dir="rtl"] .footer-contact-item {
   color: var(--primary);
 }
 
-/* Bottom Row */
 .footer-bottom {
   width: 90%;
   max-width: var(--container-max-width);
@@ -194,7 +191,6 @@ html[dir="rtl"] .footer-contact-item {
   color: var(--secondary);
 }
 
-/* Responsive */
 @media (max-width: 1023.98px) {
   .footer-container {
     grid-template-columns: 1fr 1fr;

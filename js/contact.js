@@ -1,6 +1,4 @@
-/**
- * CHEESORIA LUXURY CONTACT PAGE SCRIPT (js/contact.js)
- */
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initFloatingLabels();
@@ -10,14 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initToastControls();
 });
 
-/* ==========================================================================
-   1. Floating Label Helpers & Input Glow
-   ========================================================================== */
 function initFloatingLabels() {
   const inputs = document.querySelectorAll('.floating-input');
   
   inputs.forEach(input => {
-    // Check initial state
     if (input.value.trim() !== '') {
       input.classList.add('has-value');
     }
@@ -39,9 +33,6 @@ function initFloatingLabels() {
   });
 }
 
-/* ==========================================================================
-   2. Form Validation & Submission Handling
-   ========================================================================== */
 function initFormValidation() {
   const form = document.getElementById('luxury-contact-form');
   if (!form) return;
@@ -54,37 +45,30 @@ function initFormValidation() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // Validate fields
     const isNameValid = validateInput('form-name');
     const isEmailValid = validateEmail('form-email');
     const isSubjectValid = validateSelect('form-subject');
     const isMessageValid = validateInput('form-message');
 
     if (!isNameValid || !isEmailValid || !isSubjectValid || !isMessageValid) {
-      // Focus first invalid field
       const firstInvalid = form.querySelector('.floating-group.invalid .floating-input');
       if (firstInvalid) firstInvalid.focus();
       return;
     }
 
-    // Trigger Sending Animation
     if (submitBtn) submitBtn.disabled = true;
     if (btnText) btnText.textContent = 'Dispatching Inquiry...';
     if (btnSpinner) btnSpinner.classList.remove('hidden');
     if (btnArrow) btnArrow.style.display = 'none';
 
-    // Simulate 1.2s API response delay
     setTimeout(() => {
-      // Reset Button State
       if (submitBtn) submitBtn.disabled = false;
       if (btnText) btnText.textContent = 'Submit Inquiry';
       if (btnSpinner) btnSpinner.classList.add('hidden');
       if (btnArrow) btnArrow.style.display = 'inline-block';
 
-      // Show Toast Notification
       showToast();
 
-      // Reset Form
       form.reset();
       document.querySelectorAll('.floating-input').forEach(inp => inp.classList.remove('has-value'));
     }, 1200);
@@ -136,9 +120,6 @@ function validateSelect(selectId) {
   }
 }
 
-/* ==========================================================================
-   3. FAQ Accordion Expansion Engine
-   ========================================================================== */
 function initFaqAccordion() {
   const faqItems = document.querySelectorAll('.faq-item');
 
@@ -151,7 +132,6 @@ function initFaqAccordion() {
     trigger.addEventListener('click', () => {
       const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
 
-      // Close other items for accordion feel
       faqItems.forEach(otherItem => {
         if (otherItem !== item) {
           const otherTrigger = otherItem.querySelector('.faq-trigger');
@@ -163,7 +143,6 @@ function initFaqAccordion() {
         }
       });
 
-      // Toggle clicked item
       if (isExpanded) {
         trigger.setAttribute('aria-expanded', 'false');
         content.style.maxHeight = null;
@@ -175,9 +154,6 @@ function initFaqAccordion() {
   });
 }
 
-/* ==========================================================================
-   4. Scroll Reveal Animations
-   ========================================================================== */
 function initScrollReveal() {
   const revealElements = document.querySelectorAll('.scroll-reveal');
 
@@ -196,16 +172,12 @@ function initScrollReveal() {
   revealElements.forEach(el => observer.observe(el));
 }
 
-/* ==========================================================================
-   5. Toast Notification Modal Controls
-   ========================================================================== */
 function showToast() {
   const toast = document.getElementById('contact-toast');
   if (!toast) return;
 
   toast.classList.remove('hidden');
 
-  // Auto hide after 6 seconds
   setTimeout(() => {
     toast.classList.add('hidden');
   }, 6000);

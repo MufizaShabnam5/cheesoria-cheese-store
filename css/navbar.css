@@ -26,7 +26,6 @@
   justify-content: space-between;
 }
 
-/* Logo */
 .navbar-logo {
   display: flex;
   align-items: center;
@@ -52,23 +51,22 @@
   letter-spacing: -0.02em;
   font-weight: 700;
   font-size: 1.5rem;
-  color: var(--primary); /* Gold in both modes */
+  color: var(--primary); 
 }
 
 .logo-subtitle {
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: var(--secondary); /* Secondary in light mode */
+  color: var(--secondary); 
   text-transform: uppercase;
   text-align: center;
 }
 
 html[data-theme="dark"] .logo-subtitle {
-  color: var(--primary); /* Primary in dark mode */
+  color: var(--primary); 
 }
 
-/* Menu List */
 .navbar-menu {
   display: flex;
   align-items: center;
@@ -115,7 +113,6 @@ html[data-theme="dark"] .logo-subtitle {
   transform-origin: left;
 }
 
-/* Dropdown Menu */
 .menu-item.dropdown .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -159,7 +156,6 @@ html[data-theme="dark"] .logo-subtitle {
   padding-left: 1.2rem;
 }
 
-/* Dark mode visibility fixes for dropdown */
 html[data-theme="dark"] .menu-item.dropdown .dropdown-menu {
   background: #1a1a1a;
   border-color: #333;
@@ -174,7 +170,6 @@ html[data-theme="dark"] .dropdown-link:hover {
   background: rgba(244, 178, 35, 0.1);
 }
 
-/* Actions */
 .navbar-actions {
   display: flex;
   align-items: center;
@@ -244,7 +239,6 @@ html[data-theme="dark"] .moon-icon {
   color: #1a1200;
 }
 
-/* Mobile Toggle */
 .mobile-menu-hamburger {
   display: none;
   flex-direction: column;
@@ -264,7 +258,6 @@ html[data-theme="dark"] .moon-icon {
   transition: var(--transition-fast);
 }
 
-/* Drawer Overlay */
 .drawer-overlay {
   position: fixed;
   top: 0;
@@ -284,7 +277,6 @@ html[data-theme="dark"] .moon-icon {
   visibility: visible;
 }
 
-/* Mobile Drawer */
 .mobile-navigation-drawer {
   position: fixed;
   top: 0;
@@ -353,7 +345,6 @@ html[dir="rtl"] .mobile-navigation-drawer.active {
   color: var(--primary);
 }
 
-/* Active Navigation Link Highlighting across all media queries & themes */
 .menu-link.active {
   color: var(--primary) !important;
   font-weight: 700;
@@ -395,7 +386,6 @@ html[dir="rtl"] .drawer-link.active {
   box-shadow: 0 4px 15px rgba(244, 178, 35, 0.4);
 }
 
-/* Dark Mode Active State Fixes */
 html[data-theme="dark"] .menu-link.active {
   color: var(--primary) !important;
 }
@@ -410,8 +400,6 @@ html[data-theme="dark"] .drawer-link.active {
   background: rgba(244, 178, 35, 0.2);
 }
 
-/* Responsive Rules */
-/* Desktop and Large Breakpoint */
 @media (max-width: 1023.98px) {
   .navbar-menu {
     display: none;
@@ -426,7 +414,6 @@ html[data-theme="dark"] .drawer-link.active {
   }
 }
 
-/* RTL Layout shifts */
 html[dir="rtl"] .menu-item.dropdown .dropdown-menu {
   left: auto;
   right: 0;
